@@ -20,5 +20,4 @@ export const Router = createBrowserRouter(
       </Route>
     </>,
   ),
-  { basename: '/project2' },
 );

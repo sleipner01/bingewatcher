@@ -10,7 +10,7 @@ import { UserProvider } from './context/UserContext';
 import { Router } from './routes';
 
 const serverURI = new HttpLink({
-  uri: 'http://it2810-16.idi.ntnu.no:4001',
+  uri: import.meta.env.VITE_SERVER_URI as string,
 });
 
 export const client = new ApolloClient({
