@@ -8,9 +8,9 @@ The user can search for movies and TV shows by typing in the search bar. The use
 
 The project can be found at:
 
-> http://it2810-16.idi.ntnu.no/project2/
+> https://bingewatcher.magnusbyrkjeland.no
 
-> <i>Note: You need to be connected to NTNU's network to access the project. Either directly or through VPN.</i>
+> <i>Note: The server might not be running. Refresh the page about 1 minute after initial page load and it might work 🚀</i>
 
 ## Documentation
 

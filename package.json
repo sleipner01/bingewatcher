@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "Bingewatcher",
+  "homepage": "https://bingewatcher.magnusbyrkjeland.no",
   "directories": {
     "doc": "docs"
   },
@@ -28,7 +29,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://gitlab.stud.idi.ntnu.no/it2810-h23/Team-16/prosjekt-2"
+    "url": "https://github.com/sleipner01/bingewatcher"
   },
   "author": "Team 16 | IT2810 NTNU",
   "license": "ISC",

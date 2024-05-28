@@ -2,6 +2,7 @@ import './styles/index.scss';
 import './styles/colors.scss';
 
 import { ApolloClient, ApolloProvider, HttpLink, InMemoryCache } from '@apollo/client';
+import { inject } from '@vercel/analytics';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
@@ -19,6 +20,7 @@ export const client = new ApolloClient({
 });
 
 const root = ReactDOM.createRoot(document.getElementById('root')!);
+inject();
 
 // Call root.render() to render your app
 root.render(
