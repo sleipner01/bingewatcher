@@ -17,8 +17,7 @@ import styles from './Navbar.module.scss';
 export const Navbar: React.FC = () => {
   const navigate = useNavigate();
   const handleLogoClick = () => {
-    console.log('location.pathname', location.pathname);
-    if (location.pathname === '/project2') {
+    if (location.pathname === '/') {
       window.location.reload();
     } else {
       navigate('/');

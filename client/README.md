@@ -42,6 +42,16 @@ We have used Playwright to write end to end tests for the project. Playwright pr
 
 ## Run the client
 
+Create a `.env` file in the root of the `client` folder with the following content:
+
+```env
+VITE_SERVER_URI={server-uri}
+```
+
+> <i>Replace `{server-uri}` with the URL of the server you want to use.</i>
+>
+> To set up the server, follow instructions in server [README.md](../server/README.md#configuration).
+
 If you have not already done so, run the following command to install all dependencies:
 
 ```cli
@@ -57,24 +67,6 @@ npm run dev
 ```
 
 This will start the client on a local port number. Any code changes will trigger automatic browser updates.
-
-As standard, it will use the testing server located at:
-
-> http://it2810-16.idi.ntnu.no:4001/
-
-<hr />
-
-If you wish to use the main server, change the URI in `main.tsx` to:
-
-> http://it2810-16.idi.ntnu.no:4000/
-
-> <i>Be aware that you are not allowed to run end to end tests using the production server.</i>
-
-If you wish to run a local server, ensure you have a valid database connection, and point the URI in `main.tsx` to:
-
-> http://localhost:4000/
-
-To set up the server, follow instructions in server [README.md](../server/README.md#configuration).
 
 ## Available NPM Scripts
 
