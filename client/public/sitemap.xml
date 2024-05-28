@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://bingewatcher.magnusbyrkjeland.no/</loc>
+        <lastmod>2024-05-28</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.00</priority>
+    </url>
+    <!-- Redirect links -->
+    <url>
+        <loc>https://bingewatcher.magnusbyrkjeland.no/movies</loc>
+        <lastmod>2024-05-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://bingewatcher.magnusbyrkjeland.no/watchlist</loc>
+        <lastmod>2024-05-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://bingewatcher.magnusbyrkjeland.no/movie/565770</loc>
+        <lastmod>2024-05-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+</urlset>
