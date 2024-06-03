@@ -12,6 +12,15 @@ The project can be found at:
 
 > <i>Note: The server might not be running. Refresh the page about 1 minute after initial page load and it might work 🚀</i>
 
+## Contributors
+
+| <div style="width:180px">Full Name</div>              | Email                 |
+| ----------------------------------------------------- | --------------------- |
+| [Magnus Tomter Ouren](https://github.com/magnusouren) | magnutou@stud.ntnu.no |
+| [Ole Remi Dahl](https://github.com/oleremidahl)       | olerd@stud.ntnu.no    |
+| [Jakob Relling](https://github.com/Jakob-ere)         | jakobere@stud.ntnu.no |
+| [Magnus Byrkjeland](https://github.com/sleipner01)    | magnueb@stud.ntnu.no  |
+
 ## Documentation
 
 This readme is intended to provide a brief overview of the project setup and available npm scripts.
