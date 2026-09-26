@@ -10,7 +10,7 @@ test('should reload home when clicking on home button', async ({ page }) => {
   await page.waitForURL('**/');
 });
 
-test('should navigate to home when clicking on home button', async ({ page }) => {
+test('should navigate to home when clicking on home button', { tag: '@test-db' }, async ({ page }) => {
   const baseURL = page.url();
 
   // Go to movie page
@@ -20,7 +20,7 @@ test('should navigate to home when clicking on home button', async ({ page }) =>
   await page.waitForURL(baseURL);
 });
 
-test('should navigate to a movie when clicking on a movie', async ({ page }) => {
+test('should navigate to a movie when clicking on a movie', { tag: '@test-db' }, async ({ page }) => {
   await page.getByRole('link', { name: 'Blue Beetle poster. title: Blue Beetle.' }).click();
   await page.waitForURL('**/movie/565770');
 });
@@ -32,7 +32,7 @@ test('should navigate to a watchlist', async ({ page }) => {
   await page.waitForURL('**/watchlist');
 });
 
-test('pagination', async ({ page }) => {
+test('pagination', { tag: '@test-db' }, async ({ page }) => {
   const movieCards = page.locator('[data-testid="movie-card"]');
   await expect(movieCards).toHaveCount(16);
   await expect(page.getByTestId('pagination-container')).toBeVisible();
@@ -43,7 +43,7 @@ test('pagination', async ({ page }) => {
   await expect(movieCards2).toHaveCount(13);
 });
 
-test('shows working scroll to top button', async ({ page }) => {
+test('shows working scroll to top button', { tag: '@test-db' }, async ({ page }) => {
   await page.goto('/movie/852436');
   await page.getByTestId('vote-count').scrollIntoViewIfNeeded({ timeout: 1000 });
   await page.waitForTimeout(1000);
