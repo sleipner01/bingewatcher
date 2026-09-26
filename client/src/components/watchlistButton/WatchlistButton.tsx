@@ -1,6 +1,7 @@
 import { useMutation } from '@apollo/client/react';
-import { BookmarkAdd, BookmarkRemove } from '@mui/icons-material';
-import { ToggleButton } from '@mui/material';
+import BookmarkAdd from '@mui/icons-material/BookmarkAdd';
+import BookmarkRemove from '@mui/icons-material/BookmarkRemove';
+import ToggleButton from '@mui/material/ToggleButton';
 import { FC, memo, useState } from 'react';
 
 import { ADD_MOVIE_TO_WATCHLIST, REMOVE_MOVIE_FROM_WATCHLIST } from '../../graphql/queries';

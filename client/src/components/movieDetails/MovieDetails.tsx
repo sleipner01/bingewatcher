@@ -1,4 +1,7 @@
-import { ArrowBack, LiveTv, PeopleAlt, Star } from '@mui/icons-material';
+import ArrowBack from '@mui/icons-material/ArrowBack';
+import LiveTv from '@mui/icons-material/LiveTv';
+import PeopleAlt from '@mui/icons-material/PeopleAlt';
+import Star from '@mui/icons-material/Star';
 import { FC, useEffect } from 'react';
 import { Link } from 'react-router';
 

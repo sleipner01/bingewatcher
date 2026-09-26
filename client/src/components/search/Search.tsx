@@ -1,6 +1,7 @@
 import { useQuery } from '@apollo/client/react';
 import SearchIcon from '@mui/icons-material/Search';
-import { InputAdornment, TextField } from '@mui/material';
+import InputAdornment from '@mui/material/InputAdornment';
+import TextField from '@mui/material/TextField';
 import React, { ChangeEvent, useCallback, useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router';
 
