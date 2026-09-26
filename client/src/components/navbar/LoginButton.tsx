@@ -1,6 +1,6 @@
 import { AccountCircle as AccountCircleIcon } from '@mui/icons-material';
 import MenuIcon from '@mui/icons-material/Menu';
-import { Box, IconButton, MenuItem } from '@mui/material';
+import { Box, IconButton, MenuItem, MenuList } from '@mui/material';
 import Popover from '@mui/material/Popover';
 import { useState } from 'react';
 import { Link } from 'react-router';
@@ -78,25 +78,27 @@ const LoginButton = () => {
           horizontal: 'center',
         }}
       >
-        <MenuItem>
-          <Box sx={{ padding: '0 10px' }}>
-            <DarkModeToggle />
-          </Box>
-        </MenuItem>
-        <Link to='/watchlist' className={styles.navLink} data-testid='watchlist-link' onClick={handleMenuClose}>
-          <MenuItem>My Watchlist</MenuItem>
-        </Link>
-        <button className={styles.button} onClick={handleLogout} data-testid='logout'>
-          <MenuItem>Logout</MenuItem>
-        </button>
-        <button
-          className={styles.button}
-          onKeyDown={handleKeyDown}
-          onClick={handleDeleteUser}
-          data-testid='delete-user'
-        >
-          <MenuItem>Delete user</MenuItem>
-        </button>
+        <MenuList>
+          <MenuItem>
+            <Box sx={{ padding: '0 10px' }}>
+              <DarkModeToggle />
+            </Box>
+          </MenuItem>
+          <Link to='/watchlist' className={styles.navLink} data-testid='watchlist-link' onClick={handleMenuClose}>
+            <MenuItem>My Watchlist</MenuItem>
+          </Link>
+          <button className={styles.button} onClick={handleLogout} data-testid='logout'>
+            <MenuItem>Logout</MenuItem>
+          </button>
+          <button
+            className={styles.button}
+            onKeyDown={handleKeyDown}
+            onClick={handleDeleteUser}
+            data-testid='delete-user'
+          >
+            <MenuItem>Delete user</MenuItem>
+          </button>
+        </MenuList>
       </Popover>
     </>
   ) : (
