@@ -15,7 +15,8 @@
     "start": "bun src/index.js",
     "start:production": "NODE_ENV=production bun src/index.js",
     "dev": "bun --watch src/index.js",
-    "test": "bun test"
+    "test": "bun test",
+    "start:e2e": "bun src/test/e2eServer.js"
   },
   "type": "module",
   "devDependencies": {
