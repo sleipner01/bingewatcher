@@ -18,10 +18,10 @@ We have used Playwright to write end to end tests for the project. We have writt
 The tests naturally also test related functionality, such as user login and settings like dark mode.
 If we had more time and resources, we would have written end to end tests for accessability-considerations like keyboard navigation.
 
-The tests are located in the [e2e](./e2e) folder.
+The tests are located in the [\_\_e2e\_\_](../client/__e2e__) folder. See [Playwright setup](./playwright.md) for how to run them.
 
 > The end to end tests are meant to run on the testing database, unless a developer overrides the database URI in the `.env` file or within the CI/CD environment. This is to ensure that the tests do not affect the production database, and that the assumptions remain correct. The values from the testing is not reset after each test. In a bigger project we would have configured the database to be reset after the e2e tests to keep the testing environment even more predictable. However, we deemed it not to be a significant priority for this project, and instead carefully engineered the tests to prevent unwanted results.
 
 ## Server
 
-The server uses Vitest to run unit tests. Only the resolvers are tested, as we didn't find it important to test any other functionality in the server. The tests run each resolver with different inputs to ensure that the resolvers return the correct data.
+The server uses `bun test` to run unit tests against an in-memory MongoDB. Only the resolvers are tested, as we didn't find it important to test any other functionality in the server. The tests run each resolver with different inputs to ensure that the resolvers return the correct data.

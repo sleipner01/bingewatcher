@@ -3,12 +3,13 @@
 To maintain an organized structure in the project, files are organized as follows:
 
 ```
+├── .github                         # GitHub Actions workflow and setup action
 ├── .vscode                         # IDE configuration files
 ├── client                          # Files for front end client
 │    ├── __e2e__                    # E2E test files
 │    ├── coverage                   # Test coverage reports (ignored by git)
 │    ├── dist                       # Build files (ignored by git)
-│    ├── node_modules               # Node modules for client (ignored by git)
+│    ├── node_modules               # Links to the client's dependencies (ignored by git)
 │    ├── playwright-report          # Reports from playwright e2e tests (ignored by git)
 │    ├── public                     # Public files that will be copied to dist
 │    ├── src
@@ -27,13 +28,13 @@ To maintain an organized structure in the project, files are organized as follow
 │    ├── test-results               # Test results from playwright (ignored by git)
 │    ├── configuration files        # Front end configuration files
 ├── docs                            # Documentation files
-├── node_modules                    # Node modules for root (ignored by git)
+├── node_modules                    # Dependencies for all workspaces (ignored by git)
 ├── server                          # Files for back end server
-│    ├── node_modules               # Node modules for server (ignored by git)
+│    ├── node_modules               # Links to the server's dependencies (ignored by git)
 │    ├── src
-│    │   ├── config                 # Configuration for the server
 │    │   ├── models                 # Models for graphql
 │    │   ├── resolvers              # Resolvers for GraphQL API
+│    │   ├── test                   # Test setup
 │    │   ├── index.js               # Main file for the server
 │    │   ├── schema.graphql         # Schema and types for GraphQL
 │    ├── configuration files        # Server configuration files

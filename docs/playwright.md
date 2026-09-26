@@ -1,23 +1,25 @@
-# Playwright Setup
+# Playwright setup
 
-If you wish to run end to end tests, Playwright needs to be installed locally on your machine. If you do not have Playwright installed, navigate to the `client` directory:
+The end-to-end tests in [client/\_\_e2e\_\_](../client/__e2e__) run with Playwright in Chromium and Firefox.
 
-```cli
-cd client
+## Install the browsers
+
+From the `client` folder, run:
+
+```bash
+bunx playwright install chromium firefox
 ```
 
-<i>This is to mitigate installation warnings.</i>
+## Run the tests
 
-Then run the following command to install Playwright:
+The tests expect the movies in the `test` database, so `server/.env` must point at it. Then run, from the repository root:
 
-```cli
-bunx playwright install
+```bash
+bun run test:e2e
 ```
 
-Follow the default installation instructions.
+Playwright starts the client on http://localhost:5173 and the server on http://localhost:4000. If they are already running, it reuses them. To run only Chromium, as CI does, use `bun run test:e2e:ci` from the `client` folder.
 
-## Running tests
+> Never run the tests against the production database. They add ratings and watchlist entries, and the assertions only hold for the test data.
 
-For running end to end tests, please use the commands listed in the client [README.md](../client/README.md#test).
-
-> Please ensure you have pointed the URI to a local server using the testing database, or the testing server. Else the tests will both fail and create noise in the production data.
+### Back to [documentation](./README.md).

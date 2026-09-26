@@ -30,11 +30,13 @@ Detailed description of the testing strategy can be found in [testing](./testing
 
 Explanation for the user implementation can be found in the [user](./user.md) file.
 
-## CI/CD
+## CI/CD and deployment
 
-This project uses GitLab Pipeline for CI/CD. This section provides an overview of the CI/CD process and describes how to add new workflows.
+CI runs on GitHub Actions. The client is hosted on Vercel and the server on Render.
 
-- [CI/CD overview](./ci.md)
+- [CI overview](./ci.md)
+- [Deployment](./deployment.md)
+- [Playwright setup](./playwright.md)
 
 ## User Stories
 

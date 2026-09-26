@@ -1,6 +1,6 @@
 # Database
 
-This project uses MongoDB as database. It is hosted on our virtual machine at NTNU.
+This project uses MongoDB as database.
 
 There are two databases: `production` and `test`. The `production` database is used and meant strictly for production. The `test` database is used for development and testing.
 

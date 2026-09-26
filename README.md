@@ -1,16 +1,14 @@
 # Bingewatcher <img src="./client/public/camera-blue.svg" height=40>
 
-Binge Watcher is a platform to search for movies and TV shows. The user can search for movies and TV shows, and add them to a watchlist. The user can also rate movies and TV shows, and see the average rating of each movie and TV show.
-
-The user can search for movies and TV shows by typing in the search bar. The user can also filter the search results by selecting a category. The user can add movies and TV shows to a watchlist by clicking the "Add to watchlist" button. The user can also rate movies and TV shows by clicking the "Rate" button. The user can see the average rating of each movie and TV show by hovering over the rating. The personal rating is per user, and the average rating is for all users.
+Bingewatcher is a platform for finding movies. Users can search for movies, filter them by category, sort them by title or rating, add them to a watchlist and rate them. Personal ratings are stored per user, and each movie shows the average rating across all users.
 
 <img src="./docs/img/bingewatcher-main.jpg">
 
-The project can be found at:
+The project is live at:
 
 > https://bingewatcher.magnusbyrkjeland.no
 
-> <i>Note: The server might not be running. Refresh the page about 1 minute after initial page load and it might work 🚀</i>
+> <i>Note: The server sleeps when idle. If no movies show up, refresh the page after about a minute 🚀</i>
 
 ## Contributors
 
@@ -21,131 +19,130 @@ The project can be found at:
 | [Jakob Relling](https://github.com/Jakob-ere)         | jakobere@stud.ntnu.no |
 | [Magnus Byrkjeland](https://github.com/sleipner01)    | magnueb@stud.ntnu.no  |
 
-## Documentation
+## Tech stack
 
-This readme is intended to provide a brief overview of the project setup and available scripts.
-Other documentation can be found in the [docs](./docs) folder.
+| Part    | Technologies                                                                 |
+| ------- | ---------------------------------------------------------------------------- |
+| Client  | React 19, TypeScript 7, Vite, MUI, Apollo Client, React Router, SCSS modules |
+| Server  | Bun, Apollo Server, GraphQL, Mongoose, MongoDB                               |
+| Testing | Vitest and Testing Library (client), `bun test` (server), Playwright (e2e)   |
+| Tooling | Bun workspaces, Oxlint, Stylelint, Prettier, GitHub Actions                  |
+| Hosting | Vercel (client), Render (server)                                             |
 
 ## Project structure
 
-The project is divided into two main folders: `client`, `server`.
+The repository is a [Bun workspace](https://bun.sh/docs/install/workspaces) with two packages:
 
-### Client
+- [`client`](./client/README.md) is the React frontend.
+- [`server`](./server/README.md) is the GraphQL API.
 
-The `client` folder contains the frontend code for the project.
+The root holds the shared tooling (TypeScript, Oxlint, Stylelint, Prettier) and scripts that run across both packages. More documentation is in the [docs](./docs/README.md) folder.
 
-The client documentation can be found in the [client/README.md](./client/README.md) file.
+## Requirements
 
-### Server
+- [Bun](https://bun.sh) 1.4 or newer. The exact version is pinned in `packageManager` in [package.json](./package.json).
+- A MongoDB connection string for the server. Ask the contributors for access to the `test` database, which the end-to-end tests expect.
 
-The `server` folder contains the backend code for the project.
+Install Bun with:
 
-The server documentation can be found in the [server/README.md](./server/README.md) file.
-
-### Root
-
-The `root` has its own `package.json` file, and is used to install dependencies common for the entire project. This includes Typescript, Eslint and Prettier. It declares `client` and `server` as Bun workspaces and contains scripts for running of the client, server or both (if set up from before).
-
-## Environment
-
-The project uses [Bun](https://bun.sh) v1.4 as package manager, script runner and server runtime. Install it with:
-
-```cli
+```bash
 curl -fsSL https://bun.sh/install | bash
 ```
 
-The project have been developed and tested with Google Chrome, and therefore is best viewed in Google Chrome. Certain features may not work as intended in other browsers.
+## Getting started
 
-## Setup
+1. Install the dependencies for every workspace:
 
-### Basic setup
+   ```bash
+   bun install
+   ```
 
-To setup the project for development, run:
+2. Create `server/.env` with the database URI:
 
-```cli
-bun install
+   ```env
+   URI=<mongodb-test-uri>
+   ```
+
+3. Create `client/.env` pointing the client at the local server:
+
+   ```env
+   VITE_SERVER_URI=http://localhost:4000
+   ```
+
+4. Start the client and server:
+
+   ```bash
+   bun run dev
+   ```
+
+   The client runs at http://localhost:5173 and the server at http://localhost:4000. Both reload on code changes.
+
+To start only one of them, use `bun run dev:client` or `bun run dev:server`.
+
+## Scripts
+
+Run these from the repository root. Each workspace also has its own scripts, described in the [client](./client/README.md#scripts) and [server](./server/README.md#scripts) READMEs.
+
+### Development
+
+| <div style="width:170px">Command</div> | Description                                                                                                                   |
+| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `bun install`                          | Installs the dependencies for every workspace.                                                                                |
+| `bun run dev`                          | Starts the client and server in watch mode.                                                                                   |
+| `bun run dev:client`                   | Starts the client in watch mode.                                                                                              |
+| `bun run dev:server`                   | Starts the server in watch mode.                                                                                              |
+| `bun run build`                        | Type-checks and builds the client into `client/dist`.                                                                         |
+| `bun run check`                        | Runs lint, style lint, format check, typecheck and all tests. It's the same set of checks as CI, except the end-to-end tests. |
+
+### Testing
+
+| <div style="width:170px">Command</div> | Description                                                                                   |
+| -------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `bun run test`                         | Runs the client unit tests and the server tests.                                              |
+| `bun run test:unit`                    | Runs the client unit tests with Vitest.                                                       |
+| `bun run test:server`                  | Runs the server tests with `bun test` against an in-memory MongoDB.                           |
+| `bun run test:e2e`                     | Runs the Playwright tests in Chromium and Firefox. See [End-to-end tests](#end-to-end-tests). |
+| `bun run coverage`                     | Runs the client unit tests with coverage. The report is written to `client/coverage`.         |
+
+### Code quality
+
+| <div style="width:170px">Command</div> | Description                                                              |
+| -------------------------------------- | ------------------------------------------------------------------------ |
+| `bun run lint`                         | Lints JavaScript and TypeScript with Oxlint, including type-aware rules. |
+| `bun run lint:style`                   | Lints the SCSS modules with Stylelint.                                   |
+| `bun run lint:fix`                     | Applies the automatic fixes from Oxlint and Stylelint.                   |
+| `bun run format`                       | Formats the repository with Prettier.                                    |
+| `bun run format:check`                 | Checks the formatting without changing files.                            |
+| `bun run typecheck`                    | Type-checks the client and its config files with TypeScript 7.           |
+
+The repository recommends VS Code extensions for Oxc, Prettier and Stylelint, and fixes lint issues on save.
+
+## End-to-end tests
+
+The Playwright tests run against the `test` database, since they expect its movies. Before the first run, install the browsers:
+
+```bash
+cd client
+bunx playwright install chromium firefox
 ```
 
-This installs the dependencies for the `root`, `client` and `server` workspaces.
+With `server/.env` pointing at the test database, run:
 
-For client spesific setup, please follow instructions located in [./client/README.md](./client/README.md#run-the-client).
-
-Once client is setup up, run:
-
-```cli
-bun run dev:client
+```bash
+bun run test:e2e
 ```
 
-> <i>Client spesific scripts will only be available when the shell is located in the `client` directory. Please navigate to the directory if you wish to use them or have more flexability.</i>
+Playwright starts the client and server, or reuses them if they are already running. See [docs/playwright.md](./docs/playwright.md) for details.
 
-<hr />
+## Continuous integration
 
-### Local server
+[GitHub Actions](./.github/workflows/ci.yml) runs on every pull request and on pushes to `main`. Lint and typecheck, client unit tests, server tests and end-to-end tests run as parallel jobs. There is no build job, since Vercel and Render build on deploy.
 
-If you wish to set up a local backend server, please follow instructions located in [./server/README.md](./server/README.md#configuration).
+The end-to-end job needs a `DB_URI` repository secret with the test database URI. See [docs/ci.md](./docs/ci.md).
 
-> **Note**: You will need a valid database connection to run the server locally.
+## Deployment
 
-Once configured properly, start the server by running:
+- **Client:** Vercel builds and deploys `client` from `main`. Set `VITE_SERVER_URI` to the server URL in the Vercel project.
+- **Server:** Render runs `server` with Bun. Set the `URI` environment variable to the production database URI.
 
-```cli
-bun run dev:server
-```
-
-> <i>Server spesific scripts will only be available when the shell is located in the `server` directory. Please navigate to the directory if you wish to use them or have more flexability.</i>
-
-<hr>
-
-If both client and server is set up correctly, you can use the following script to run both the client and server concurrently in the same terminal:
-
-```cli
-bun run dev
-```
-
-This will start the project in development mode. The project will run locally on a local ports, initialized by Vite and Bun. Any code changes will trigger automatic browser- and server updates.
-
-<i> Overview over all the scripts can be found in the section below.</i>
-
-## Available Scripts
-
-This section provides an overview of the available scripts for this project. These scripts help you manage development, testing, building, and other maintenance tasks for the project.
-
-### Setup
-
-| <div style="width:200px">Command</div> | Description                                                                                                           |
-| -------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `bun install`                          | Installs dependencies for `root`, `client` & `server`.                                                                |
-| `bun run dev`                          | This script starts client & server concurrently in development mode. Any code changes will trigger automatic updates. |
-| `bun run dev:client`                   | This script starts client in development mode. Any code changes will trigger automatic browser updates.               |
-| `bun run dev:server`                   | This script starts server in development mode. Any code changes will trigger automatic updates.                       |
-
-### Test
-
-| <div style="width:200px">Command</div> | Description                                                                                                                                                                                                        |
-| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `bun run test`                         | Runs all the test files in the entire project. <b>Note:</b> You must [set up Playwright](./docs/playwright.md) for this to work.                                                                                   |
-| `bun run test:client`                  | Runs tests in the `./client` using Vitest and Playwright. <b>Note:</b> You must [set up Playwright](./docs/playwright.md) for this to work.                                                                        |
-| `bun run test:server`                  | This script runs tests in the server using Vitest. It will execute all tests in the `./server` directory.                                                                                                          |
-| `bun run coverage:client`              | This script runs tests with code coverage using Vitest. After completion, it will generate code coverage reports that you can find in your project. You can find the reports [here](./client/coverage/index.html). |
-
-### Code Quality
-
-| <div style="width:200px">Command</div> | Description                                                                                                                                                              |
-| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `bun run lint`                         | Runs ESLint to check TypeScript and TypeScript-related files in the project for style errors and code issues. It will also report any unused ESLint-disable directives.  |
-| `bun run lint:fix`                     | Runs ESLint with the --fix flag to automatically fix formatting issues and style errors in project files.                                                                |
-| `bun run lint:style`                   | Runs Stylelint to check CSS files in the project for style errors and code issues.                                                                                       |
-| `bun run lint:style:fix`               | Runs Stylelint with the --fix flag to automatically fix formatting issues and style errors in project files.                                                             |
-| `bun run format`                       | Runs Prettier to format the code in TypeScript, JavaScript, SCSS, JSON, and CSS files in the project according to the configuration defined in the .prettierrc.cjs file. |
-
-### Production
-
-| <div style="width:200px">Command</div> | Description                                              |
-| -------------------------------------- | -------------------------------------------------------- |
-| `bun run build:client`                 | This script builds the client for production using Vite. |
-
-### CI/CD
-
-| <div style="width:200px">Command</div> | Description                                           |
-| -------------------------------------- | ----------------------------------------------------- |
-| `bun run pipeline`                     | This script will simulate the CI/CD pipeline locally. |
+See [docs/deployment.md](./docs/deployment.md) for the build settings.
