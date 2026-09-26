@@ -6,7 +6,6 @@ const pageSize = 16;
 const movieResolver = {
   Query: {
     // Return the 16 first movies
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     async getMovies(_, { page }) {
       try {
         const skip = (page - 1) * pageSize;

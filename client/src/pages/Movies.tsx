@@ -1,6 +1,6 @@
 import { useQuery } from '@apollo/client/react';
 import { Pagination } from '@mui/material';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { FilterSort } from '../components/filterSort/FilterSort';
 import { Spinner } from '../components/loading/Loading';
@@ -28,7 +28,6 @@ export const Movies = () => {
   const userContext = useUser();
   const { user } = userContext;
 
-  const [count, setCount] = useState<number | undefined>(sizeLimit);
   const [page, setPage] = useState(cachedPage);
   const [genre, setGenre] = useState(cachedGenre);
   const [sort, setSort] = useState<Sort>(cachedSort);
@@ -45,13 +44,7 @@ export const Movies = () => {
     variables: variables,
   });
 
-  useEffect(() => {
-    if (data && data.getMovieCountByGenre) {
-      setCount(data.getMovieCountByGenre);
-    } else {
-      setCount(undefined);
-    }
-  }, [data]);
+  const count = data?.getMovieCountByGenre || undefined;
 
   const movies = data?.getMovies || data?.getMoviesByGenre || data?.getMoviesByRating || data?.getMoviesByTitleAZ || [];
 
