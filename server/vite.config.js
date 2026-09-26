@@ -4,5 +4,6 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'node',
+    globalSetup: './src/test/downloadMongoBinary.js',
   },
 });

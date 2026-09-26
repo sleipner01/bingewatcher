@@ -1,7 +1,6 @@
 import { ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from '@apollo/server/standalone';
 import { mergeResolvers } from '@graphql-tools/merge';
-import dotenv from 'dotenv';
 import { readFileSync } from 'fs';
 import mongoose from 'mongoose';
 
@@ -12,13 +11,9 @@ import watchlistResolver from './resolvers/watchlistResolver.js';
 
 const mergedResolvers = mergeResolvers([movieResolver, ratingResolver, watchlistResolver, genreResolver]);
 
-// Load environment variables
-// Any other than production uses the .env file
+// Bun loads .env, and .env.production on top of it when NODE_ENV=production
 if (process.env.NODE_ENV === 'production') {
-  dotenv.config({ path: './.env.production' });
   console.log('Production environment detected');
-} else {
-  dotenv.config();
 }
 
 function readURIArgument() {
