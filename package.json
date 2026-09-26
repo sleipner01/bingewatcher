@@ -26,8 +26,9 @@
     "lint:fix": "oxlint --fix && stylelint --fix \"client/src/**/*.scss\"",
     "lint:style": "stylelint \"client/src/**/*.scss\"",
     "lint:style:fix": "stylelint --fix \"client/src/**/*.scss\"",
-    "format": "prettier --write '**/src/**/*.{ts,tsx,js,jsx,scss,json,css}' --config .prettierrc.cjs",
-    "pipeline": "bun install --frozen-lockfile && bun run lint && bun run test:client && bun run test:server && bun run build"
+    "format": "prettier --write .",
+    "pipeline": "bun install --frozen-lockfile && bun run lint && bun run test:client && bun run test:server && bun run build",
+    "format:check": "prettier --check ."
   },
   "repository": {
     "type": "git",
