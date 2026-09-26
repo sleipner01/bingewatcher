@@ -4,7 +4,7 @@ test.beforeEach(async ({ page }) => {
   await page.goto('/');
 });
 
-test('search', async ({ page }) => {
+test('search', { tag: '@test-db' }, async ({ page }) => {
   await page.getByPlaceholder('Search by title...').click();
   await page.getByPlaceholder('Search by title...').fill('let');
   await page.getByLabel('Movie: Let Her Kill You').click();
@@ -12,7 +12,7 @@ test('search', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Let Her Kill You (2023)' })).toBeVisible();
 });
 
-test('filtering', async ({ page }) => {
+test('filtering', { tag: '@test-db' }, async ({ page }) => {
   // Filtering Action movies
   await page.getByTestId('category-filter').click();
   await page.getByRole('option', { name: 'Action' }).click();
@@ -32,7 +32,7 @@ test('filtering', async ({ page }) => {
   await expect(movieCards3).toHaveCount(5);
 });
 
-test('sorting alphabetically', async ({ page }) => {
+test('sorting alphabetically', { tag: '@test-db' }, async ({ page }) => {
   const movieCards = page.locator('[data-testid="movie-card"]');
   await expect(movieCards.first()).toContainText('Blue Beetle');
 
@@ -49,7 +49,7 @@ test('sorting alphabetically', async ({ page }) => {
   await expect(movieCards3.first()).toContainText('Transformers: Rise of the Beasts');
 });
 
-test('sorting by rating', async ({ page }) => {
+test('sorting by rating', { tag: '@test-db' }, async ({ page }) => {
   const movieCards = page.locator('[data-testid="movie-card"]');
   await expect(movieCards.first()).toContainText('Blue Beetle');
 
@@ -66,7 +66,7 @@ test('sorting by rating', async ({ page }) => {
   await expect(movieCards3.first()).toContainText('Let Her Kill You');
 });
 
-test('sorting & filtering', async ({ page }) => {
+test('sorting & filtering', { tag: '@test-db' }, async ({ page }) => {
   const movieCards = page.locator('[data-testid="movie-card"]');
   await expect(movieCards.first()).toContainText('Blue Beetle');
 
@@ -92,7 +92,7 @@ test('sorting & filtering', async ({ page }) => {
   await expect(movieCards4.first()).toContainText('Mondocane');
 });
 
-test('global state of sorting & filtering', async ({ page }) => {
+test('global state of sorting & filtering', { tag: '@test-db' }, async ({ page }) => {
   // Filtering on Drama
   await page.getByLabel('Category').click();
   await page.getByRole('option', { name: 'Drama' }).click();
@@ -110,7 +110,7 @@ test('global state of sorting & filtering', async ({ page }) => {
   await expect(page.getByTestId('category-filter')).toHaveText('Drama');
 });
 
-test('movie added to watchlist', async ({ page }) => {
+test('movie added to watchlist', { tag: '@test-db' }, async ({ page }) => {
   await page.getByTestId('login-button').click();
   await page.getByTestId('menu').click();
   await page.getByTestId('watchlist-link').click();
@@ -134,7 +134,7 @@ test('movie added to watchlist', async ({ page }) => {
   await expect(page.locator('[data-testid="movies-list-container"]')).toHaveCount(0);
 });
 
-test('reset filter', async ({ page }) => {
+test('reset filter', { tag: '@test-db' }, async ({ page }) => {
   // Filtering on Drama
   await page.getByLabel('Category').click();
   await page.getByRole('option', { name: 'Drama' }).click();
@@ -146,7 +146,7 @@ test('reset filter', async ({ page }) => {
   await expect(movieCards).toHaveCount(16);
 });
 
-test('movie added to watchlist from icon on moviecard in movielist', async ({ page }) => {
+test('movie added to watchlist from icon on moviecard in movielist', { tag: '@test-db' }, async ({ page }) => {
   await page.getByTestId('login-button').click();
 
   // Add movie to watchlist
@@ -175,7 +175,7 @@ test('movie added to watchlist from icon on moviecard in movielist', async ({ pa
   await page.reload();
 });
 
-test('reviews affect score', async ({ page }) => {
+test('reviews affect score', { tag: '@test-db' }, async ({ page }) => {
   // Login
   await page.getByTestId('login-button').click();
 
