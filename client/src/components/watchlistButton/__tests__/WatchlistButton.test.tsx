@@ -61,13 +61,13 @@ describe('WatchlistButton', () => {
   });
 
   it('Should render a small button by default', () => {
-    const { container } = renderWithProviders({
+    renderWithProviders({
       child: <WatchlistButton movie={mockMovie} user={mockUser} />,
     });
-    expect(container.querySelector('.smallContainer')).toBeDefined();
+    expect(screen.queryByText('Remove from watchlist')).toBeNull();
   });
 
-  it('Should call removeWatchlist mutation when button is clicked and movie is not in watchlist', async () => {
+  it('Should call removeWatchlist mutation when button is clicked and movie is in watchlist', async () => {
     const mocks = [
       {
         request: {
@@ -89,11 +89,8 @@ describe('WatchlistButton', () => {
     ];
     renderWithProviders({ child: <WatchlistButton movie={mockMovie} user={mockUser} />, mocks: mocks });
 
-    expect(screen.getByRole('button').querySelector('.remove')).toBeDefined();
-    expect(screen.getByRole('button').querySelector('.add')).toBeNull();
-    fireEvent.click(screen.getByRole('button'));
-    expect(screen.getByRole('button').querySelector('.add')).toBeDefined();
-    expect(screen.getByRole('button').querySelector('.remove')).toBeNull();
+    fireEvent.click(screen.getByRole('button', { name: 'Remove movie from watchlist' }));
+    expect(await screen.findByRole('button', { name: 'Add movie to watchlist' })).toBeTruthy();
   });
 
   it('Should call addWatchlist mutation when button is clicked and movie is not in watchlist', async () => {
@@ -122,10 +119,7 @@ describe('WatchlistButton', () => {
       mocks: mocks,
     });
 
-    expect(screen.getByRole('button').querySelector('.add')).toBeDefined();
-    expect(screen.getByRole('button').querySelector('.remove')).toBeNull();
-    fireEvent.click(screen.getByRole('button'));
-    expect(screen.getByRole('button').querySelector('.remove')).toBeDefined();
-    expect(screen.getByRole('button').querySelector('.add')).toBeNull();
+    fireEvent.click(screen.getByRole('button', { name: 'Add movie to watchlist' }));
+    expect(await screen.findByRole('button', { name: 'Remove movie from watchlist' })).toBeTruthy();
   });
 });
