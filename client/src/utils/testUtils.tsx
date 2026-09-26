@@ -1,5 +1,6 @@
 import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client';
 import { ApolloProvider } from '@apollo/client/react';
+import { MockLink } from '@apollo/client/testing';
 import { MockedProvider } from '@apollo/client/testing/react';
 import { render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router';
@@ -25,8 +26,7 @@ type ProviderMocks = {
 
 interface ProviderProps {
   child: React.ReactNode;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  mocks?: any[];
+  mocks?: MockLink.MockedResponse[];
   mockUser?: User;
   providerMocks?: ProviderMocks;
 }
