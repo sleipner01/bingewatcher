@@ -16,26 +16,8 @@ if (process.env.NODE_ENV === 'production') {
   console.log('Production environment detected');
 }
 
-function readURIArgument() {
-  if (process.argv.length > 2) {
-    return process.argv[2];
-  } else {
-    console.error('No URI provided...');
-  }
-}
-
-// Load database URI
-let URI = null;
-if (process.env.CI) {
-  console.log('CI environment detected');
-  URI = readURIArgument();
-} else if (process.env.NODE_ENV === 'manual') {
-  console.log('Manual environment detected');
-  URI = readURIArgument();
-} else {
-  // Use db URI from .env file
-  URI = process.env.URI;
-}
+// A URI passed as the first argument takes precedence over the URI environment variable
+const URI = process.argv[2] ?? process.env.URI;
 
 const typeDefs = readFileSync('./src/schema.graphql', 'utf8');
 
