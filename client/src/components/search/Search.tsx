@@ -159,7 +159,9 @@ export const Search: React.FC = () => {
           {data.getMoviesByTitle.map((movie: SearchResult, index: number) => (
             <li
               key={movie._id}
-              ref={(e) => (movieRefs.current[index] = e)}
+              ref={(e) => {
+                movieRefs.current[index] = e;
+              }}
               className={styles.movie}
               tabIndex={0}
               onClick={() => handleMovieSelect(movie)}
