@@ -1,5 +1,9 @@
 import { useQuery } from '@apollo/client/react';
-import { Button, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material';
+import Button from '@mui/material/Button';
+import FormControl from '@mui/material/FormControl';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import Select, { type SelectChangeEvent } from '@mui/material/Select';
 import { FC } from 'react';
 
 import { setCachedFilterValues } from '../../graphql/cachedFilterValues';

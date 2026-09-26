@@ -1,4 +1,4 @@
-import { ArrowUpward } from '@mui/icons-material';
+import ArrowUpward from '@mui/icons-material/ArrowUpward';
 import { type FC, useEffect, useState } from 'react';
 import { Outlet } from 'react-router';
 

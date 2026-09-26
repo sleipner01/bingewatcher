@@ -1,4 +1,6 @@
-import { AppBar, IconButton, Toolbar } from '@mui/material';
+import AppBar from '@mui/material/AppBar';
+import IconButton from '@mui/material/IconButton';
+import Toolbar from '@mui/material/Toolbar';
 import React from 'react';
 import { Link, useNavigate } from 'react-router';
 

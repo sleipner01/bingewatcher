@@ -1,6 +1,9 @@
-import { AccountCircle as AccountCircleIcon } from '@mui/icons-material';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import MenuIcon from '@mui/icons-material/Menu';
-import { Box, IconButton, MenuItem, MenuList } from '@mui/material';
+import Box from '@mui/material/Box';
+import IconButton from '@mui/material/IconButton';
+import MenuItem from '@mui/material/MenuItem';
+import MenuList from '@mui/material/MenuList';
 import Popover from '@mui/material/Popover';
 import { useState } from 'react';
 import { Link } from 'react-router';

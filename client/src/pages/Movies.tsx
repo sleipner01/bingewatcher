@@ -1,5 +1,5 @@
 import { useQuery } from '@apollo/client/react';
-import { Pagination } from '@mui/material';
+import Pagination from '@mui/material/Pagination';
 import { useState } from 'react';
 
 import { FilterSort } from '../components/filterSort/FilterSort';
