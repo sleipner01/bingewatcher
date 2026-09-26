@@ -1,5 +1,5 @@
-@use '../../styles/colors.scss';
-@use '../../styles/breakpoints.scss';
+@use '../../styles/colors';
+@use '../../styles/breakpoints';
 
 .movieDetails {
   margin-top: 1rem;
@@ -64,7 +64,8 @@
 
     .textContent {
       width: 100%;
-      //color: var(--color-text);
+
+      // color: var(--color-text);
 
       .overview {
         line-height: 1.75rem;

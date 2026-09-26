@@ -1,17 +1,7 @@
 {
-  "extends": ["stylelint-config-standard"],
-  "customSyntax": "postcss-less",
-  "overrides": [
-    {
-      "files": ["*.{js,ts,jsx,tsx}"],
-      "customSyntax": "postcss-lit"
-    }
-  ],
+  "extends": ["stylelint-config-standard-scss"],
   "rules": {
     "selector-class-pattern": null,
-    "selector-id-pattern": null,
-    "at-rule-no-unknown": null,
-    "media-feature-name-no-unknown": null,
-    "media-query-no-invalid": null
+    "selector-id-pattern": null
   }
 }

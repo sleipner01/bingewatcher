@@ -23,9 +23,9 @@
     "build": "bun run build:client",
     "build:client": "bun --filter bingewatcher-frontend build",
     "lint": "oxlint --max-warnings 0",
-    "lint:fix": "oxlint --fix && stylelint --fix \"**/src/**/*{css, js, ts, tsx, jsx}\"",
-    "lint:style": "stylelint \"**/src/**/*{scss, css, js, ts, tsx, jsx}\"",
-    "lint:style:fix": "stylelint --fix \"**/src/**/*{css, js, ts, tsx, jsx}\"",
+    "lint:fix": "oxlint --fix && stylelint --fix \"client/src/**/*.scss\"",
+    "lint:style": "stylelint \"client/src/**/*.scss\"",
+    "lint:style:fix": "stylelint --fix \"client/src/**/*.scss\"",
     "format": "prettier --write '**/src/**/*.{ts,tsx,js,jsx,scss,json,css}' --config .prettierrc.cjs",
     "pipeline": "bun install --frozen-lockfile && bun run lint && bun run test:client && bun run test:server && bun run build"
   },
@@ -39,13 +39,9 @@
     "eslint-plugin-simple-import-sort": "^14.0.0",
     "oxlint": "^1.85.0",
     "oxlint-tsgolint": "^7.0.2003",
-    "postcss-less": "^6.0.0",
-    "postcss-lit": "^1.4.1",
     "prettier": "^3.9.9",
     "stylelint": "^17.15.0",
-    "stylelint-config-standard": "^40.0.0",
     "stylelint-config-standard-scss": "^17.0.0",
-    "stylelint-scss": "^7.3.0",
     "typescript": "^7.0.2"
   }
 }
