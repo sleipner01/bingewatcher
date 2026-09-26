@@ -1,0 +1,100 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    name: Lint and typecheck
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: ./.github/actions/setup-bun
+      - run: bun run lint
+      - run: bun run lint:style
+      - run: bun run format:check
+      - run: bun run typecheck
+
+  test-client:
+    name: Client unit tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: ./.github/actions/setup-bun
+        with:
+          filter: bingewatcher-frontend
+      - run: bun run test:unit
+        working-directory: client
+
+  test-server:
+    name: Server tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: ./.github/actions/setup-bun
+        with:
+          filter: bingewatcher-server
+      - uses: actions/cache@v6
+        with:
+          path: ~/.cache/mongodb-binaries
+          key: mongodb-binaries-${{ runner.os }}-${{ hashFiles('bun.lock') }}
+          restore-keys: mongodb-binaries-${{ runner.os }}-
+      - run: bun test
+        working-directory: server
+
+  e2e:
+    name: End-to-end tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    # Needs the test database secret, which pull requests from forks don't get
+    if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository
+    env:
+      DB_URI: ${{ secrets.DB_URI }}
+    steps:
+      - name: Check for the test database secret
+        run: |
+          if [ -z "$DB_URI" ]; then
+            echo "::error::Set the DB_URI repository secret to the test database URI"
+            exit 1
+          fi
+      - uses: actions/checkout@v7
+      - uses: ./.github/actions/setup-bun
+        with:
+          filter: bingewatcher-frontend bingewatcher-server
+
+      - name: Read Playwright version
+        id: playwright
+        working-directory: client
+        run: echo "version=$(bun --print 'require("@playwright/test/package.json").version')" >> "$GITHUB_OUTPUT"
+      - name: Cache Playwright browsers
+        id: playwright-cache
+        uses: actions/cache@v6
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ steps.playwright.outputs.version }}
+      # GitHub's Ubuntu runners ship with Chrome's system libraries, so only the browser itself is needed
+      - name: Install Chromium
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+        working-directory: client
+        run: bunx playwright install --only-shell chromium
+
+      - run: bun run test:e2e:ci
+        working-directory: client
+      - uses: actions/upload-artifact@v7
+        if: failure()
+        with:
+          name: playwright-report
+          path: client/playwright-report/
+          retention-days: 7
