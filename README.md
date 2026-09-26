@@ -40,7 +40,7 @@ The root holds the shared tooling (TypeScript, Oxlint, Stylelint, Prettier) and 
 
 ## Requirements
 
-- [Bun](https://bun.sh) 1.4 or newer. The exact version is pinned in `packageManager` in [package.json](./package.json).
+- [Bun](https://bun.sh) 1.4 or newer. The exact version is pinned in [.bun-version](./.bun-version), which CI and Render both read.
 - A MongoDB connection string to run the server against real data. The tests don't need one.
 
 Install Bun with:

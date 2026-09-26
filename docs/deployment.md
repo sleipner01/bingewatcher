@@ -17,7 +17,7 @@ Vercel builds the client from the repository root, where [vercel.json](../vercel
 
 ## Server on Render
 
-Render runs the server from source with Bun, so it has no build step beyond installing dependencies.
+Render runs the server from source with Bun, so it has no build step beyond installing dependencies. Render reads the Bun version from [.bun-version](../.bun-version). Without it, services created before August 2025 default to Bun 1.1, which can't read the text `bun.lock` format.
 
 | Setting        | Value                                                                     |
 | -------------- | ------------------------------------------------------------------------- |
