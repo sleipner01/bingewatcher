@@ -3,7 +3,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { Box, IconButton, MenuItem } from '@mui/material';
 import Popover from '@mui/material/Popover';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 
 import { useUser } from '../../context/UserContext';
 import DarkModeToggle from '../darkModeToggle/DarkModeToggle';

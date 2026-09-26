@@ -1,6 +1,6 @@
 import { ArrowUpward } from '@mui/icons-material';
 import { type FC, useEffect, useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router';
 
 import { Navbar } from '../components/navbar/Navbar';
 import styles from './PageLayout.module.scss';

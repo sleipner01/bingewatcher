@@ -1,6 +1,6 @@
 import { AppBar, IconButton, Toolbar } from '@mui/material';
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router';
 
 import MovieIcon from '../../assets/SVG/camera-white.svg';
 import LoginButton from './LoginButton';

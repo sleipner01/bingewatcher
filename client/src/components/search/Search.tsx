@@ -2,7 +2,7 @@ import { useQuery } from '@apollo/client';
 import SearchIcon from '@mui/icons-material/Search';
 import { InputAdornment, TextField } from '@mui/material';
 import React, { ChangeEvent, useCallback, useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 
 import { GET_MOVIES_BY_TITLE } from '../../graphql/queries';
 import styles from './Search.module.scss';
