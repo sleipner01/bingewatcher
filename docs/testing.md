@@ -20,7 +20,7 @@ If we had more time and resources, we would have written end to end tests for ac
 
 The tests are located in the [\_\_e2e\_\_](../client/__e2e__) folder. See [Playwright setup](./playwright.md) for how to run them.
 
-> The end to end tests are meant to run on the testing database, unless a developer overrides the database URI in the `.env` file or within the CI/CD environment. This is to ensure that the tests do not affect the production database, and that the assumptions remain correct. The values from the testing is not reset after each test. In a bigger project we would have configured the database to be reset after the e2e tests to keep the testing environment even more predictable. However, we deemed it not to be a significant priority for this project, and instead carefully engineered the tests to prevent unwanted results.
+> By default, the end to end tests run against an in-memory MongoDB seeded with a small set of movies, so they never touch a shared database. Tests tagged `@test-db` expect the movies in the `test` database and only run when `E2E_TEST_DB_URI` points at it. That data isn't reset after each run, so those tests are written so that repeated runs don't change their results.
 
 ## Server
 
