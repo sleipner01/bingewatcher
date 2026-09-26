@@ -2,7 +2,7 @@ import { FC, ReactNode, useState } from 'react';
 import { vi } from 'vitest';
 
 // Importer UserContext
-import { UserContext } from '../context/UserContext'; // Importer UserContext
+import { UserContext } from '../context/useUser';
 import { User } from '../types';
 
 interface MockUserProviderProps {

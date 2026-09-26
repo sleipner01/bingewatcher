@@ -2,7 +2,7 @@ import { ArrowBack, LiveTv, PeopleAlt, Star } from '@mui/icons-material';
 import { FC, useEffect } from 'react';
 import { Link } from 'react-router';
 
-import { useUser } from '../../context/UserContext';
+import { useUser } from '../../context/useUser';
 import { Genre, Movie } from '../../types';
 import { StarRating } from '../starRating/StarRating';
 import WatchlistButton from '../watchlistButton/WatchlistButton';

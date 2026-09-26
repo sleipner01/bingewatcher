@@ -3,7 +3,7 @@ import { useParams } from 'react-router';
 
 import { Spinner } from '../components/loading/Loading';
 import { MovieDetails } from '../components/movieDetails/MovieDetails';
-import { useUser } from '../context/UserContext';
+import { useUser } from '../context/useUser';
 import { GET_MOVIE } from '../graphql/queries';
 
 export const Movie = () => {

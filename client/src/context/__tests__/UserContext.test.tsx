@@ -1,6 +1,7 @@
 import { fireEvent, render, waitFor } from '@testing-library/react';
 
-import { UserProvider, useUser } from '../UserContext';
+import { UserProvider } from '../UserContext';
+import { useUser } from '../useUser';
 
 const TestingComponent = () => {
   const { user, setUser, login, logout, deleteUser, darkMode, toggleDarkMode } = useUser();
