@@ -3,35 +3,32 @@
 exports[`LoginButton > Should match snapshot when logged inn 1`] = `
 <div>
   <button
-    class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-zylse7-MuiButtonBase-root-MuiIconButton-root"
+    class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-e9aoga-MuiButtonBase-root-MuiIconButton-root"
     data-testid="menu"
     tabindex="0"
     type="button"
   >
     <p
-      class="_loginText_67d6a9"
+      class="_loginText_28f405"
       data-testid="user-name"
     >
       Foo Bar
     </p>
     <svg
       aria-label="menu"
-      class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-156hki5-MuiSvgIcon-root"
+      class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-h8z8a1-MuiSvgIcon-root"
       data-testid="MenuIcon"
       focusable="false"
       role="img"
       viewBox="0 0 24 24"
     >
       <path
-        d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+        d="M3 18h18v-2H3zm0-5h18v-2H3zm0-7v2h18V6z"
       />
       <title>
         menu
       </title>
     </svg>
-    <span
-      class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-    />
   </button>
 </div>
 `;
@@ -39,37 +36,34 @@ exports[`LoginButton > Should match snapshot when logged inn 1`] = `
 exports[`LoginButton > Should match snapshot when logged out 1`] = `
 <div>
   <button
-    class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-zylse7-MuiButtonBase-root-MuiIconButton-root"
+    class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-sizeMedium css-e9aoga-MuiButtonBase-root-MuiIconButton-root"
     data-testid="login-button"
     tabindex="0"
     type="button"
   >
     <p
-      class="_loginText_67d6a9"
+      class="_loginText_28f405"
     >
       Login
     </p>
     <svg
       aria-hidden="true"
-      class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-jj92jx-MuiSvgIcon-root"
+      class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-1aem1cc-MuiSvgIcon-root"
       data-testid="AccountCircleIcon"
       focusable="false"
       viewBox="0 0 24 24"
     >
       <path
-        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 4c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm0 14c-2.03 0-4.43-.82-6.14-2.88C7.55 15.8 9.68 15 12 15s4.45.8 6.14 2.12C16.43 19.18 14.03 20 12 20z"
+        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m0 4c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6m0 14c-2.03 0-4.43-.82-6.14-2.88C7.55 15.8 9.68 15 12 15s4.45.8 6.14 2.12C16.43 19.18 14.03 20 12 20"
       />
     </svg>
-    <span
-      class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-    />
   </button>
 </div>
 `;
 
 exports[`LoginButton > Should render a login button when the user is not logged in 1`] = `
 <p
-  class="_loginText_67d6a9"
+  class="_loginText_28f405"
 >
   Login
 </p>

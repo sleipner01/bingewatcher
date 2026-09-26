@@ -3,7 +3,7 @@
 exports[`StarRating > should match snapshot 1`] = `
 <div>
   <div
-    class="_rating_30a570"
+    class="_rating_fd611d"
   >
     <h2
       tabindex="0"
@@ -24,23 +24,23 @@ exports[`StarRating > should match snapshot 1`] = `
       </span>
     </h3>
     <span
-      class="MuiRating-root MuiRating-sizeLarge css-jue3ft-MuiRating-root"
+      class="MuiRating-root MuiRating-sizeLarge css-1vbqlhf-MuiRating-root"
       data-testid="star-rating"
     >
       <span
-        class="MuiRating-decimal css-34he1w-MuiRating-decimal"
+        class="MuiRating-decimal css-1czqjfa-MuiRating-decimal"
       >
         <label
-          class="css-dqr9h-MuiRating-label"
-          for=":r1:"
+          class="css-hlbajn-MuiRating-label"
+          for="star-rating-_r_1_"
           style="width: 0%; overflow: hidden; position: absolute;"
         >
           <span
-            class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+            class="MuiRating-icon MuiRating-iconFilled css-1sagf1d-MuiRating-icon"
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
               data-testid="StarIcon"
               focusable="false"
               viewBox="0 0 24 24"
@@ -58,21 +58,21 @@ exports[`StarRating > should match snapshot 1`] = `
         </label>
         <input
           class="MuiRating-visuallyHidden"
-          id=":r1:"
+          id="star-rating-_r_1_"
           name="star-rating"
           type="radio"
           value="0.5"
         />
         <label
-          class="css-dqr9h-MuiRating-label"
-          for=":r2:"
+          class="css-hlbajn-MuiRating-label"
+          for="star-rating-_r_2_"
         >
           <span
-            class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+            class="MuiRating-icon MuiRating-iconFilled css-1sagf1d-MuiRating-icon"
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
               data-testid="StarIcon"
               focusable="false"
               viewBox="0 0 24 24"
@@ -90,26 +90,26 @@ exports[`StarRating > should match snapshot 1`] = `
         </label>
         <input
           class="MuiRating-visuallyHidden"
-          id=":r2:"
+          id="star-rating-_r_2_"
           name="star-rating"
           type="radio"
           value="1"
         />
       </span>
       <span
-        class="MuiRating-decimal css-34he1w-MuiRating-decimal"
+        class="MuiRating-decimal css-1czqjfa-MuiRating-decimal"
       >
         <label
-          class="css-dqr9h-MuiRating-label"
-          for=":r3:"
+          class="css-hlbajn-MuiRating-label"
+          for="star-rating-_r_3_"
           style="width: 0%; overflow: hidden; position: absolute;"
         >
           <span
-            class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+            class="MuiRating-icon MuiRating-iconFilled css-1sagf1d-MuiRating-icon"
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
               data-testid="StarIcon"
               focusable="false"
               viewBox="0 0 24 24"
@@ -127,21 +127,21 @@ exports[`StarRating > should match snapshot 1`] = `
         </label>
         <input
           class="MuiRating-visuallyHidden"
-          id=":r3:"
+          id="star-rating-_r_3_"
           name="star-rating"
           type="radio"
           value="1.5"
         />
         <label
-          class="css-dqr9h-MuiRating-label"
-          for=":r4:"
+          class="css-hlbajn-MuiRating-label"
+          for="star-rating-_r_4_"
         >
           <span
-            class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+            class="MuiRating-icon MuiRating-iconFilled css-1sagf1d-MuiRating-icon"
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
               data-testid="StarIcon"
               focusable="false"
               viewBox="0 0 24 24"
@@ -159,26 +159,26 @@ exports[`StarRating > should match snapshot 1`] = `
         </label>
         <input
           class="MuiRating-visuallyHidden"
-          id=":r4:"
+          id="star-rating-_r_4_"
           name="star-rating"
           type="radio"
           value="2"
         />
       </span>
       <span
-        class="MuiRating-decimal css-34he1w-MuiRating-decimal"
+        class="MuiRating-decimal css-1czqjfa-MuiRating-decimal"
       >
         <label
-          class="css-dqr9h-MuiRating-label"
-          for=":r5:"
+          class="css-hlbajn-MuiRating-label"
+          for="star-rating-_r_5_"
           style="width: 0%; overflow: hidden; position: absolute;"
         >
           <span
-            class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+            class="MuiRating-icon MuiRating-iconFilled css-1sagf1d-MuiRating-icon"
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
               data-testid="StarIcon"
               focusable="false"
               viewBox="0 0 24 24"
@@ -196,21 +196,21 @@ exports[`StarRating > should match snapshot 1`] = `
         </label>
         <input
           class="MuiRating-visuallyHidden"
-          id=":r5:"
+          id="star-rating-_r_5_"
           name="star-rating"
           type="radio"
           value="2.5"
         />
         <label
-          class="css-dqr9h-MuiRating-label"
-          for=":r6:"
+          class="css-hlbajn-MuiRating-label"
+          for="star-rating-_r_6_"
         >
           <span
-            class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+            class="MuiRating-icon MuiRating-iconFilled css-1sagf1d-MuiRating-icon"
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
               data-testid="StarIcon"
               focusable="false"
               viewBox="0 0 24 24"
@@ -228,26 +228,26 @@ exports[`StarRating > should match snapshot 1`] = `
         </label>
         <input
           class="MuiRating-visuallyHidden"
-          id=":r6:"
+          id="star-rating-_r_6_"
           name="star-rating"
           type="radio"
           value="3"
         />
       </span>
       <span
-        class="MuiRating-decimal css-34he1w-MuiRating-decimal"
+        class="MuiRating-decimal css-1czqjfa-MuiRating-decimal"
       >
         <label
-          class="css-dqr9h-MuiRating-label"
-          for=":r7:"
+          class="css-hlbajn-MuiRating-label"
+          for="star-rating-_r_7_"
           style="width: 0%; overflow: hidden; position: absolute;"
         >
           <span
-            class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+            class="MuiRating-icon MuiRating-iconFilled css-1sagf1d-MuiRating-icon"
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
               data-testid="StarIcon"
               focusable="false"
               viewBox="0 0 24 24"
@@ -265,21 +265,21 @@ exports[`StarRating > should match snapshot 1`] = `
         </label>
         <input
           class="MuiRating-visuallyHidden"
-          id=":r7:"
+          id="star-rating-_r_7_"
           name="star-rating"
           type="radio"
           value="3.5"
         />
         <label
-          class="css-dqr9h-MuiRating-label"
-          for=":r8:"
+          class="css-hlbajn-MuiRating-label"
+          for="star-rating-_r_8_"
         >
           <span
-            class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+            class="MuiRating-icon MuiRating-iconFilled css-1sagf1d-MuiRating-icon"
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
               data-testid="StarIcon"
               focusable="false"
               viewBox="0 0 24 24"
@@ -297,26 +297,26 @@ exports[`StarRating > should match snapshot 1`] = `
         </label>
         <input
           class="MuiRating-visuallyHidden"
-          id=":r8:"
+          id="star-rating-_r_8_"
           name="star-rating"
           type="radio"
           value="4"
         />
       </span>
       <span
-        class="MuiRating-decimal css-34he1w-MuiRating-decimal"
+        class="MuiRating-decimal css-1czqjfa-MuiRating-decimal"
       >
         <label
-          class="css-dqr9h-MuiRating-label"
-          for=":r9:"
+          class="css-hlbajn-MuiRating-label"
+          for="star-rating-_r_9_"
           style="width: 0%; overflow: hidden; position: absolute;"
         >
           <span
-            class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+            class="MuiRating-icon MuiRating-iconFilled css-1sagf1d-MuiRating-icon"
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
               data-testid="StarIcon"
               focusable="false"
               viewBox="0 0 24 24"
@@ -334,21 +334,21 @@ exports[`StarRating > should match snapshot 1`] = `
         </label>
         <input
           class="MuiRating-visuallyHidden"
-          id=":r9:"
+          id="star-rating-_r_9_"
           name="star-rating"
           type="radio"
           value="4.5"
         />
         <label
-          class="css-dqr9h-MuiRating-label"
-          for=":ra:"
+          class="css-hlbajn-MuiRating-label"
+          for="star-rating-_r_a_"
         >
           <span
-            class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+            class="MuiRating-icon MuiRating-iconFilled css-1sagf1d-MuiRating-icon"
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
               data-testid="StarIcon"
               focusable="false"
               viewBox="0 0 24 24"
@@ -366,26 +366,26 @@ exports[`StarRating > should match snapshot 1`] = `
         </label>
         <input
           class="MuiRating-visuallyHidden"
-          id=":ra:"
+          id="star-rating-_r_a_"
           name="star-rating"
           type="radio"
           value="5"
         />
       </span>
       <span
-        class="MuiRating-decimal css-34he1w-MuiRating-decimal"
+        class="MuiRating-decimal css-1czqjfa-MuiRating-decimal"
       >
         <label
-          class="css-dqr9h-MuiRating-label"
-          for=":rb:"
+          class="css-hlbajn-MuiRating-label"
+          for="star-rating-_r_b_"
           style="width: 0%; overflow: hidden; position: absolute;"
         >
           <span
-            class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+            class="MuiRating-icon MuiRating-iconFilled css-1sagf1d-MuiRating-icon"
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
               data-testid="StarIcon"
               focusable="false"
               viewBox="0 0 24 24"
@@ -403,21 +403,21 @@ exports[`StarRating > should match snapshot 1`] = `
         </label>
         <input
           class="MuiRating-visuallyHidden"
-          id=":rb:"
+          id="star-rating-_r_b_"
           name="star-rating"
           type="radio"
           value="5.5"
         />
         <label
-          class="css-dqr9h-MuiRating-label"
-          for=":rc:"
+          class="css-hlbajn-MuiRating-label"
+          for="star-rating-_r_c_"
         >
           <span
-            class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+            class="MuiRating-icon MuiRating-iconFilled css-1sagf1d-MuiRating-icon"
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
               data-testid="StarIcon"
               focusable="false"
               viewBox="0 0 24 24"
@@ -435,26 +435,26 @@ exports[`StarRating > should match snapshot 1`] = `
         </label>
         <input
           class="MuiRating-visuallyHidden"
-          id=":rc:"
+          id="star-rating-_r_c_"
           name="star-rating"
           type="radio"
           value="6"
         />
       </span>
       <span
-        class="MuiRating-decimal css-34he1w-MuiRating-decimal"
+        class="MuiRating-decimal css-1czqjfa-MuiRating-decimal"
       >
         <label
-          class="css-dqr9h-MuiRating-label"
-          for=":rd:"
+          class="css-hlbajn-MuiRating-label"
+          for="star-rating-_r_d_"
           style="width: 0%; overflow: hidden; position: absolute;"
         >
           <span
-            class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+            class="MuiRating-icon MuiRating-iconFilled css-1sagf1d-MuiRating-icon"
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
               data-testid="StarIcon"
               focusable="false"
               viewBox="0 0 24 24"
@@ -472,21 +472,21 @@ exports[`StarRating > should match snapshot 1`] = `
         </label>
         <input
           class="MuiRating-visuallyHidden"
-          id=":rd:"
+          id="star-rating-_r_d_"
           name="star-rating"
           type="radio"
           value="6.5"
         />
         <label
-          class="css-dqr9h-MuiRating-label"
-          for=":re:"
+          class="css-hlbajn-MuiRating-label"
+          for="star-rating-_r_e_"
         >
           <span
-            class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+            class="MuiRating-icon MuiRating-iconFilled css-1sagf1d-MuiRating-icon"
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
               data-testid="StarIcon"
               focusable="false"
               viewBox="0 0 24 24"
@@ -504,26 +504,26 @@ exports[`StarRating > should match snapshot 1`] = `
         </label>
         <input
           class="MuiRating-visuallyHidden"
-          id=":re:"
+          id="star-rating-_r_e_"
           name="star-rating"
           type="radio"
           value="7"
         />
       </span>
       <span
-        class="MuiRating-decimal css-34he1w-MuiRating-decimal"
+        class="MuiRating-decimal css-1czqjfa-MuiRating-decimal"
       >
         <label
-          class="css-dqr9h-MuiRating-label"
-          for=":rf:"
+          class="css-hlbajn-MuiRating-label"
+          for="star-rating-_r_f_"
           style="width: 0%; overflow: hidden; position: absolute;"
         >
           <span
-            class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+            class="MuiRating-icon MuiRating-iconFilled css-1sagf1d-MuiRating-icon"
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
               data-testid="StarIcon"
               focusable="false"
               viewBox="0 0 24 24"
@@ -541,21 +541,21 @@ exports[`StarRating > should match snapshot 1`] = `
         </label>
         <input
           class="MuiRating-visuallyHidden"
-          id=":rf:"
+          id="star-rating-_r_f_"
           name="star-rating"
           type="radio"
           value="7.5"
         />
         <label
-          class="css-dqr9h-MuiRating-label"
-          for=":rg:"
+          class="css-hlbajn-MuiRating-label"
+          for="star-rating-_r_g_"
         >
           <span
-            class="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+            class="MuiRating-icon MuiRating-iconFilled css-1sagf1d-MuiRating-icon"
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
               data-testid="StarIcon"
               focusable="false"
               viewBox="0 0 24 24"
@@ -573,26 +573,26 @@ exports[`StarRating > should match snapshot 1`] = `
         </label>
         <input
           class="MuiRating-visuallyHidden"
-          id=":rg:"
+          id="star-rating-_r_g_"
           name="star-rating"
           type="radio"
           value="8"
         />
       </span>
       <span
-        class="MuiRating-decimal css-34he1w-MuiRating-decimal"
+        class="MuiRating-decimal css-1czqjfa-MuiRating-decimal"
       >
         <label
-          class="css-dqr9h-MuiRating-label"
-          for=":rh:"
+          class="css-hlbajn-MuiRating-label"
+          for="star-rating-_r_h_"
           style="width: 0%; overflow: hidden; position: absolute;"
         >
           <span
-            class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+            class="MuiRating-icon MuiRating-iconEmpty css-9xw0na-MuiRating-icon"
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
               data-testid="StarBorderIcon"
               focusable="false"
               viewBox="0 0 24 24"
@@ -610,21 +610,21 @@ exports[`StarRating > should match snapshot 1`] = `
         </label>
         <input
           class="MuiRating-visuallyHidden"
-          id=":rh:"
+          id="star-rating-_r_h_"
           name="star-rating"
           type="radio"
           value="8.5"
         />
         <label
-          class="css-dqr9h-MuiRating-label"
-          for=":ri:"
+          class="css-hlbajn-MuiRating-label"
+          for="star-rating-_r_i_"
         >
           <span
-            class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+            class="MuiRating-icon MuiRating-iconEmpty css-9xw0na-MuiRating-icon"
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
               data-testid="StarBorderIcon"
               focusable="false"
               viewBox="0 0 24 24"
@@ -642,26 +642,26 @@ exports[`StarRating > should match snapshot 1`] = `
         </label>
         <input
           class="MuiRating-visuallyHidden"
-          id=":ri:"
+          id="star-rating-_r_i_"
           name="star-rating"
           type="radio"
           value="9"
         />
       </span>
       <span
-        class="MuiRating-decimal css-34he1w-MuiRating-decimal"
+        class="MuiRating-decimal css-1czqjfa-MuiRating-decimal"
       >
         <label
-          class="css-dqr9h-MuiRating-label"
-          for=":rj:"
+          class="css-hlbajn-MuiRating-label"
+          for="star-rating-_r_j_"
           style="width: 0%; overflow: hidden; position: absolute;"
         >
           <span
-            class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+            class="MuiRating-icon MuiRating-iconEmpty css-9xw0na-MuiRating-icon"
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
               data-testid="StarBorderIcon"
               focusable="false"
               viewBox="0 0 24 24"
@@ -679,21 +679,21 @@ exports[`StarRating > should match snapshot 1`] = `
         </label>
         <input
           class="MuiRating-visuallyHidden"
-          id=":rj:"
+          id="star-rating-_r_j_"
           name="star-rating"
           type="radio"
           value="9.5"
         />
         <label
-          class="css-dqr9h-MuiRating-label"
-          for=":rk:"
+          class="css-hlbajn-MuiRating-label"
+          for="star-rating-_r_k_"
         >
           <span
-            class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+            class="MuiRating-icon MuiRating-iconEmpty css-9xw0na-MuiRating-icon"
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
               data-testid="StarBorderIcon"
               focusable="false"
               viewBox="0 0 24 24"
@@ -711,14 +711,14 @@ exports[`StarRating > should match snapshot 1`] = `
         </label>
         <input
           class="MuiRating-visuallyHidden"
-          id=":rk:"
+          id="star-rating-_r_k_"
           name="star-rating"
           type="radio"
           value="10"
         />
       </span>
       <label
-        class="MuiRating-label MuiRating-pristine css-dqr9h-MuiRating-label"
+        class="MuiRating-label MuiRating-pristine css-hlbajn-MuiRating-label"
       >
         <input
           class="MuiRating-visuallyHidden"
@@ -735,7 +735,7 @@ exports[`StarRating > should match snapshot 1`] = `
       </label>
     </span>
     <p
-      class="_info_30a570"
+      class="_info_fd611d"
     >
       Click on a star to select/change rating. The rating will be saved to your account.
     </p>

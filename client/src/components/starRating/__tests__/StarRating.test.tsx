@@ -70,7 +70,7 @@ describe('StarRating', () => {
       child: <StarRating movieId={1} user={mockUser} />,
       mocks: mocks,
     });
-    await waitFor(() => screen.getByText('Your selected rating:'));
+    await waitFor(() => screen.getByText('8 of 10 stars'));
     expect(container).toMatchSnapshot();
   });
 

@@ -3,23 +3,24 @@
 exports[`MovieDetails > should match snapshot 1`] = `
 <div>
   <div
-    class="_movieDetails_bdc06c"
+    class="_movieDetails_b35bab"
   >
     <a
       aria-label="link back to movie page"
-      class="_goBack_bdc06c"
+      class="_goBack_b35bab"
+      data-discover="true"
       href="/"
       id="scroll-to-top-focus"
     >
       <svg
         aria-hidden="true"
-        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+        class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1umw9bq-MuiSvgIcon-root"
         data-testid="ArrowBackIcon"
         focusable="false"
         viewBox="0 0 24 24"
       >
         <path
-          d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+          d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20z"
         />
       </svg>
        
@@ -29,12 +30,12 @@ exports[`MovieDetails > should match snapshot 1`] = `
     </a>
     <img
       alt="Foo Bar backdrop poster"
-      class="_backdropPoster_bdc06c"
+      class="_backdropPoster_b35bab"
       loading="lazy"
       src="https://image.tmdb.org/t/p/original//mockBackdropURL.jpg"
     />
     <div
-      class="_container_bdc06c"
+      class="_container_b35bab"
     >
       <h1
         tabindex="-1"
@@ -45,13 +46,13 @@ exports[`MovieDetails > should match snapshot 1`] = `
         )
       </h1>
       <div
-        class="_bigContainer_5dd437"
+        class="_bigContainer_0a1d77"
         data-testid="watchlist-button"
       >
         <button
           aria-label="Add movie to watchlist"
           aria-pressed="false"
-          class="MuiButtonBase-root MuiToggleButton-root MuiToggleButton-sizeSmall MuiToggleButton-primary css-1dlyelz-MuiButtonBase-root-MuiToggleButton-root"
+          class="MuiButtonBase-root MuiToggleButton-root MuiToggleButton-sizeSmall MuiToggleButton-primary css-xtj3ox-MuiButtonBase-root-MuiToggleButton-root"
           data-testid="watchlist-toggle-button"
           tabindex="0"
           title="Add movie to watchlist"
@@ -60,27 +61,24 @@ exports[`MovieDetails > should match snapshot 1`] = `
         >
           <svg
             aria-hidden="true"
-            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium _add_5dd437 css-i4bv87-MuiSvgIcon-root"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium _add_0a1d77 css-1umw9bq-MuiSvgIcon-root"
             data-testid="BookmarkAddIcon"
             focusable="false"
             viewBox="0 0 24 24"
           >
             <path
-              d="M21 7h-2v2h-2V7h-2V5h2V3h2v2h2v2zm-2 14-7-3-7 3V5c0-1.1.9-2 2-2h7c-.63.84-1 1.87-1 3 0 2.76 2.24 5 5 5 .34 0 .68-.03 1-.1V21z"
+              d="M21 7h-2v2h-2V7h-2V5h2V3h2v2h2zm-2 14-7-3-7 3V5c0-1.1.9-2 2-2h7c-.63.84-1 1.87-1 3 0 2.76 2.24 5 5 5 .34 0 .68-.03 1-.1z"
             />
           </svg>
           <span
-            class="_text_5dd437"
+            class="_text_0a1d77"
           >
             Add to watchlist
           </span>
-          <span
-            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-          />
         </button>
       </div>
       <p
-        class="_date_bdc06c"
+        class="_date_b35bab"
         tabindex="0"
       >
         1970-01-01
@@ -88,39 +86,39 @@ exports[`MovieDetails > should match snapshot 1`] = `
         Adventure, Action
       </p>
       <div
-        class="_content_bdc06c"
+        class="_content_b35bab"
       >
         <div
-          class="_textContent_bdc06c"
+          class="_textContent_b35bab"
         >
           <h2
-            class="_subtitle_bdc06c"
+            class="_subtitle_b35bab"
             tabindex="0"
           >
             About:
           </h2>
           <p
-            class="_overview_bdc06c"
+            class="_overview_b35bab"
             tabindex="0"
           >
             Simple mock overview
           </p>
         </div>
         <h2
-          class="_subtitle_bdc06c"
+          class="_subtitle_b35bab"
           tabindex="0"
         >
           Statistics:
         </h2>
         <div
-          class="_details_bdc06c"
+          class="_details_b35bab"
         >
           <div
-            class="_detail_bdc06c"
+            class="_detail_b35bab"
           >
             <div
               aria-label="Average rating by other users: 5 out of 10"
-              class="_score_bdc06c"
+              class="_score_b35bab"
               tabindex="0"
             >
               5.0
@@ -128,7 +126,7 @@ exports[`MovieDetails > should match snapshot 1`] = `
               <div>
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
                   data-testid="StarIcon"
                   focusable="false"
                   viewBox="0 0 24 24"
@@ -144,11 +142,11 @@ exports[`MovieDetails > should match snapshot 1`] = `
             </p>
           </div>
           <div
-            class="_detail_bdc06c"
+            class="_detail_b35bab"
           >
             <div
               aria-label="Amount of votes: 555"
-              class="_score_bdc06c"
+              class="_score_b35bab"
               data-testid="vote-count"
               tabindex="0"
             >
@@ -156,13 +154,13 @@ exports[`MovieDetails > should match snapshot 1`] = `
               <div>
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
                   data-testid="PeopleAltIcon"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
                   <path
-                    d="M16.67 13.13C18.04 14.06 19 15.32 19 17v3h4v-3c0-2.18-3.57-3.47-6.33-3.87z"
+                    d="M16.67 13.13C18.04 14.06 19 15.32 19 17v3h4v-3c0-2.18-3.57-3.47-6.33-3.87"
                     fill-rule="evenodd"
                   />
                   <circle
@@ -172,7 +170,7 @@ exports[`MovieDetails > should match snapshot 1`] = `
                     r="4"
                   />
                   <path
-                    d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4c-.47 0-.91.1-1.33.24C14.5 5.27 15 6.58 15 8s-.5 2.73-1.33 3.76c.42.14.86.24 1.33.24zm-6 1c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z"
+                    d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4c-.47 0-.91.1-1.33.24C14.5 5.27 15 6.58 15 8s-.5 2.73-1.33 3.76c.42.14.86.24 1.33.24m-6 1c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4"
                     fill-rule="evenodd"
                   />
                 </svg>
@@ -183,24 +181,24 @@ exports[`MovieDetails > should match snapshot 1`] = `
             </p>
           </div>
           <div
-            class="_detail_bdc06c"
+            class="_detail_b35bab"
           >
             <div
               aria-label="Popularity: 1000"
-              class="_score_bdc06c"
+              class="_score_b35bab"
               tabindex="0"
             >
               1000
               <div>
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
                   data-testid="LiveTvIcon"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
                   <path
-                    d="M21 6h-7.59l3.29-3.29L16 2l-4 4-4-4-.71.71L10.59 6H3c-1.1 0-2 .89-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.11-.9-2-2-2zm0 14H3V8h18v12zM9 10v8l7-4z"
+                    d="M21 6h-7.59l3.29-3.29L16 2l-4 4-4-4-.71.71L10.59 6H3c-1.1 0-2 .89-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.11-.9-2-2-2m0 14H3V8h18zM9 10v8l7-4z"
                   />
                 </svg>
               </div>
@@ -212,7 +210,7 @@ exports[`MovieDetails > should match snapshot 1`] = `
         </div>
       </div>
       <div
-        class="_rating_30a570"
+        class="_rating_fd611d"
       >
         <h2
           tabindex="0"
@@ -233,23 +231,23 @@ exports[`MovieDetails > should match snapshot 1`] = `
           </span>
         </h3>
         <span
-          class="MuiRating-root MuiRating-sizeLarge css-jue3ft-MuiRating-root"
+          class="MuiRating-root MuiRating-sizeLarge css-1vbqlhf-MuiRating-root"
           data-testid="star-rating"
         >
           <span
-            class="MuiRating-decimal css-34he1w-MuiRating-decimal"
+            class="MuiRating-decimal css-1czqjfa-MuiRating-decimal"
           >
             <label
-              class="css-dqr9h-MuiRating-label"
-              for=":rm:"
+              class="css-hlbajn-MuiRating-label"
+              for="star-rating-_r_m_"
               style="width: 0%; overflow: hidden; position: absolute;"
             >
               <span
-                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                class="MuiRating-icon MuiRating-iconEmpty css-9xw0na-MuiRating-icon"
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
                   data-testid="StarBorderIcon"
                   focusable="false"
                   viewBox="0 0 24 24"
@@ -267,21 +265,21 @@ exports[`MovieDetails > should match snapshot 1`] = `
             </label>
             <input
               class="MuiRating-visuallyHidden"
-              id=":rm:"
+              id="star-rating-_r_m_"
               name="star-rating"
               type="radio"
               value="0.5"
             />
             <label
-              class="css-dqr9h-MuiRating-label"
-              for=":rn:"
+              class="css-hlbajn-MuiRating-label"
+              for="star-rating-_r_n_"
             >
               <span
-                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                class="MuiRating-icon MuiRating-iconEmpty css-9xw0na-MuiRating-icon"
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
                   data-testid="StarBorderIcon"
                   focusable="false"
                   viewBox="0 0 24 24"
@@ -299,26 +297,26 @@ exports[`MovieDetails > should match snapshot 1`] = `
             </label>
             <input
               class="MuiRating-visuallyHidden"
-              id=":rn:"
+              id="star-rating-_r_n_"
               name="star-rating"
               type="radio"
               value="1"
             />
           </span>
           <span
-            class="MuiRating-decimal css-34he1w-MuiRating-decimal"
+            class="MuiRating-decimal css-1czqjfa-MuiRating-decimal"
           >
             <label
-              class="css-dqr9h-MuiRating-label"
-              for=":ro:"
+              class="css-hlbajn-MuiRating-label"
+              for="star-rating-_r_o_"
               style="width: 0%; overflow: hidden; position: absolute;"
             >
               <span
-                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                class="MuiRating-icon MuiRating-iconEmpty css-9xw0na-MuiRating-icon"
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
                   data-testid="StarBorderIcon"
                   focusable="false"
                   viewBox="0 0 24 24"
@@ -336,21 +334,21 @@ exports[`MovieDetails > should match snapshot 1`] = `
             </label>
             <input
               class="MuiRating-visuallyHidden"
-              id=":ro:"
+              id="star-rating-_r_o_"
               name="star-rating"
               type="radio"
               value="1.5"
             />
             <label
-              class="css-dqr9h-MuiRating-label"
-              for=":rp:"
+              class="css-hlbajn-MuiRating-label"
+              for="star-rating-_r_p_"
             >
               <span
-                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                class="MuiRating-icon MuiRating-iconEmpty css-9xw0na-MuiRating-icon"
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
                   data-testid="StarBorderIcon"
                   focusable="false"
                   viewBox="0 0 24 24"
@@ -368,26 +366,26 @@ exports[`MovieDetails > should match snapshot 1`] = `
             </label>
             <input
               class="MuiRating-visuallyHidden"
-              id=":rp:"
+              id="star-rating-_r_p_"
               name="star-rating"
               type="radio"
               value="2"
             />
           </span>
           <span
-            class="MuiRating-decimal css-34he1w-MuiRating-decimal"
+            class="MuiRating-decimal css-1czqjfa-MuiRating-decimal"
           >
             <label
-              class="css-dqr9h-MuiRating-label"
-              for=":rq:"
+              class="css-hlbajn-MuiRating-label"
+              for="star-rating-_r_q_"
               style="width: 0%; overflow: hidden; position: absolute;"
             >
               <span
-                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                class="MuiRating-icon MuiRating-iconEmpty css-9xw0na-MuiRating-icon"
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
                   data-testid="StarBorderIcon"
                   focusable="false"
                   viewBox="0 0 24 24"
@@ -405,21 +403,21 @@ exports[`MovieDetails > should match snapshot 1`] = `
             </label>
             <input
               class="MuiRating-visuallyHidden"
-              id=":rq:"
+              id="star-rating-_r_q_"
               name="star-rating"
               type="radio"
               value="2.5"
             />
             <label
-              class="css-dqr9h-MuiRating-label"
-              for=":rr:"
+              class="css-hlbajn-MuiRating-label"
+              for="star-rating-_r_r_"
             >
               <span
-                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                class="MuiRating-icon MuiRating-iconEmpty css-9xw0na-MuiRating-icon"
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
                   data-testid="StarBorderIcon"
                   focusable="false"
                   viewBox="0 0 24 24"
@@ -437,26 +435,26 @@ exports[`MovieDetails > should match snapshot 1`] = `
             </label>
             <input
               class="MuiRating-visuallyHidden"
-              id=":rr:"
+              id="star-rating-_r_r_"
               name="star-rating"
               type="radio"
               value="3"
             />
           </span>
           <span
-            class="MuiRating-decimal css-34he1w-MuiRating-decimal"
+            class="MuiRating-decimal css-1czqjfa-MuiRating-decimal"
           >
             <label
-              class="css-dqr9h-MuiRating-label"
-              for=":rs:"
+              class="css-hlbajn-MuiRating-label"
+              for="star-rating-_r_s_"
               style="width: 0%; overflow: hidden; position: absolute;"
             >
               <span
-                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                class="MuiRating-icon MuiRating-iconEmpty css-9xw0na-MuiRating-icon"
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
                   data-testid="StarBorderIcon"
                   focusable="false"
                   viewBox="0 0 24 24"
@@ -474,21 +472,21 @@ exports[`MovieDetails > should match snapshot 1`] = `
             </label>
             <input
               class="MuiRating-visuallyHidden"
-              id=":rs:"
+              id="star-rating-_r_s_"
               name="star-rating"
               type="radio"
               value="3.5"
             />
             <label
-              class="css-dqr9h-MuiRating-label"
-              for=":rt:"
+              class="css-hlbajn-MuiRating-label"
+              for="star-rating-_r_t_"
             >
               <span
-                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                class="MuiRating-icon MuiRating-iconEmpty css-9xw0na-MuiRating-icon"
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
                   data-testid="StarBorderIcon"
                   focusable="false"
                   viewBox="0 0 24 24"
@@ -506,26 +504,26 @@ exports[`MovieDetails > should match snapshot 1`] = `
             </label>
             <input
               class="MuiRating-visuallyHidden"
-              id=":rt:"
+              id="star-rating-_r_t_"
               name="star-rating"
               type="radio"
               value="4"
             />
           </span>
           <span
-            class="MuiRating-decimal css-34he1w-MuiRating-decimal"
+            class="MuiRating-decimal css-1czqjfa-MuiRating-decimal"
           >
             <label
-              class="css-dqr9h-MuiRating-label"
-              for=":ru:"
+              class="css-hlbajn-MuiRating-label"
+              for="star-rating-_r_u_"
               style="width: 0%; overflow: hidden; position: absolute;"
             >
               <span
-                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                class="MuiRating-icon MuiRating-iconEmpty css-9xw0na-MuiRating-icon"
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
                   data-testid="StarBorderIcon"
                   focusable="false"
                   viewBox="0 0 24 24"
@@ -543,21 +541,21 @@ exports[`MovieDetails > should match snapshot 1`] = `
             </label>
             <input
               class="MuiRating-visuallyHidden"
-              id=":ru:"
+              id="star-rating-_r_u_"
               name="star-rating"
               type="radio"
               value="4.5"
             />
             <label
-              class="css-dqr9h-MuiRating-label"
-              for=":rv:"
+              class="css-hlbajn-MuiRating-label"
+              for="star-rating-_r_v_"
             >
               <span
-                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                class="MuiRating-icon MuiRating-iconEmpty css-9xw0na-MuiRating-icon"
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
                   data-testid="StarBorderIcon"
                   focusable="false"
                   viewBox="0 0 24 24"
@@ -575,26 +573,26 @@ exports[`MovieDetails > should match snapshot 1`] = `
             </label>
             <input
               class="MuiRating-visuallyHidden"
-              id=":rv:"
+              id="star-rating-_r_v_"
               name="star-rating"
               type="radio"
               value="5"
             />
           </span>
           <span
-            class="MuiRating-decimal css-34he1w-MuiRating-decimal"
+            class="MuiRating-decimal css-1czqjfa-MuiRating-decimal"
           >
             <label
-              class="css-dqr9h-MuiRating-label"
-              for=":r10:"
+              class="css-hlbajn-MuiRating-label"
+              for="star-rating-_r_10_"
               style="width: 0%; overflow: hidden; position: absolute;"
             >
               <span
-                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                class="MuiRating-icon MuiRating-iconEmpty css-9xw0na-MuiRating-icon"
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
                   data-testid="StarBorderIcon"
                   focusable="false"
                   viewBox="0 0 24 24"
@@ -612,21 +610,21 @@ exports[`MovieDetails > should match snapshot 1`] = `
             </label>
             <input
               class="MuiRating-visuallyHidden"
-              id=":r10:"
+              id="star-rating-_r_10_"
               name="star-rating"
               type="radio"
               value="5.5"
             />
             <label
-              class="css-dqr9h-MuiRating-label"
-              for=":r11:"
+              class="css-hlbajn-MuiRating-label"
+              for="star-rating-_r_11_"
             >
               <span
-                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                class="MuiRating-icon MuiRating-iconEmpty css-9xw0na-MuiRating-icon"
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
                   data-testid="StarBorderIcon"
                   focusable="false"
                   viewBox="0 0 24 24"
@@ -644,26 +642,26 @@ exports[`MovieDetails > should match snapshot 1`] = `
             </label>
             <input
               class="MuiRating-visuallyHidden"
-              id=":r11:"
+              id="star-rating-_r_11_"
               name="star-rating"
               type="radio"
               value="6"
             />
           </span>
           <span
-            class="MuiRating-decimal css-34he1w-MuiRating-decimal"
+            class="MuiRating-decimal css-1czqjfa-MuiRating-decimal"
           >
             <label
-              class="css-dqr9h-MuiRating-label"
-              for=":r12:"
+              class="css-hlbajn-MuiRating-label"
+              for="star-rating-_r_12_"
               style="width: 0%; overflow: hidden; position: absolute;"
             >
               <span
-                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                class="MuiRating-icon MuiRating-iconEmpty css-9xw0na-MuiRating-icon"
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
                   data-testid="StarBorderIcon"
                   focusable="false"
                   viewBox="0 0 24 24"
@@ -681,21 +679,21 @@ exports[`MovieDetails > should match snapshot 1`] = `
             </label>
             <input
               class="MuiRating-visuallyHidden"
-              id=":r12:"
+              id="star-rating-_r_12_"
               name="star-rating"
               type="radio"
               value="6.5"
             />
             <label
-              class="css-dqr9h-MuiRating-label"
-              for=":r13:"
+              class="css-hlbajn-MuiRating-label"
+              for="star-rating-_r_13_"
             >
               <span
-                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                class="MuiRating-icon MuiRating-iconEmpty css-9xw0na-MuiRating-icon"
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
                   data-testid="StarBorderIcon"
                   focusable="false"
                   viewBox="0 0 24 24"
@@ -713,26 +711,26 @@ exports[`MovieDetails > should match snapshot 1`] = `
             </label>
             <input
               class="MuiRating-visuallyHidden"
-              id=":r13:"
+              id="star-rating-_r_13_"
               name="star-rating"
               type="radio"
               value="7"
             />
           </span>
           <span
-            class="MuiRating-decimal css-34he1w-MuiRating-decimal"
+            class="MuiRating-decimal css-1czqjfa-MuiRating-decimal"
           >
             <label
-              class="css-dqr9h-MuiRating-label"
-              for=":r14:"
+              class="css-hlbajn-MuiRating-label"
+              for="star-rating-_r_14_"
               style="width: 0%; overflow: hidden; position: absolute;"
             >
               <span
-                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                class="MuiRating-icon MuiRating-iconEmpty css-9xw0na-MuiRating-icon"
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
                   data-testid="StarBorderIcon"
                   focusable="false"
                   viewBox="0 0 24 24"
@@ -750,21 +748,21 @@ exports[`MovieDetails > should match snapshot 1`] = `
             </label>
             <input
               class="MuiRating-visuallyHidden"
-              id=":r14:"
+              id="star-rating-_r_14_"
               name="star-rating"
               type="radio"
               value="7.5"
             />
             <label
-              class="css-dqr9h-MuiRating-label"
-              for=":r15:"
+              class="css-hlbajn-MuiRating-label"
+              for="star-rating-_r_15_"
             >
               <span
-                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                class="MuiRating-icon MuiRating-iconEmpty css-9xw0na-MuiRating-icon"
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
                   data-testid="StarBorderIcon"
                   focusable="false"
                   viewBox="0 0 24 24"
@@ -782,26 +780,26 @@ exports[`MovieDetails > should match snapshot 1`] = `
             </label>
             <input
               class="MuiRating-visuallyHidden"
-              id=":r15:"
+              id="star-rating-_r_15_"
               name="star-rating"
               type="radio"
               value="8"
             />
           </span>
           <span
-            class="MuiRating-decimal css-34he1w-MuiRating-decimal"
+            class="MuiRating-decimal css-1czqjfa-MuiRating-decimal"
           >
             <label
-              class="css-dqr9h-MuiRating-label"
-              for=":r16:"
+              class="css-hlbajn-MuiRating-label"
+              for="star-rating-_r_16_"
               style="width: 0%; overflow: hidden; position: absolute;"
             >
               <span
-                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                class="MuiRating-icon MuiRating-iconEmpty css-9xw0na-MuiRating-icon"
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
                   data-testid="StarBorderIcon"
                   focusable="false"
                   viewBox="0 0 24 24"
@@ -819,21 +817,21 @@ exports[`MovieDetails > should match snapshot 1`] = `
             </label>
             <input
               class="MuiRating-visuallyHidden"
-              id=":r16:"
+              id="star-rating-_r_16_"
               name="star-rating"
               type="radio"
               value="8.5"
             />
             <label
-              class="css-dqr9h-MuiRating-label"
-              for=":r17:"
+              class="css-hlbajn-MuiRating-label"
+              for="star-rating-_r_17_"
             >
               <span
-                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                class="MuiRating-icon MuiRating-iconEmpty css-9xw0na-MuiRating-icon"
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
                   data-testid="StarBorderIcon"
                   focusable="false"
                   viewBox="0 0 24 24"
@@ -851,26 +849,26 @@ exports[`MovieDetails > should match snapshot 1`] = `
             </label>
             <input
               class="MuiRating-visuallyHidden"
-              id=":r17:"
+              id="star-rating-_r_17_"
               name="star-rating"
               type="radio"
               value="9"
             />
           </span>
           <span
-            class="MuiRating-decimal css-34he1w-MuiRating-decimal"
+            class="MuiRating-decimal css-1czqjfa-MuiRating-decimal"
           >
             <label
-              class="css-dqr9h-MuiRating-label"
-              for=":r18:"
+              class="css-hlbajn-MuiRating-label"
+              for="star-rating-_r_18_"
               style="width: 0%; overflow: hidden; position: absolute;"
             >
               <span
-                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                class="MuiRating-icon MuiRating-iconEmpty css-9xw0na-MuiRating-icon"
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
                   data-testid="StarBorderIcon"
                   focusable="false"
                   viewBox="0 0 24 24"
@@ -888,21 +886,21 @@ exports[`MovieDetails > should match snapshot 1`] = `
             </label>
             <input
               class="MuiRating-visuallyHidden"
-              id=":r18:"
+              id="star-rating-_r_18_"
               name="star-rating"
               type="radio"
               value="9.5"
             />
             <label
-              class="css-dqr9h-MuiRating-label"
-              for=":r19:"
+              class="css-hlbajn-MuiRating-label"
+              for="star-rating-_r_19_"
             >
               <span
-                class="MuiRating-icon MuiRating-iconEmpty css-1c99szj-MuiRating-icon"
+                class="MuiRating-icon MuiRating-iconEmpty css-9xw0na-MuiRating-icon"
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1vooibu-MuiSvgIcon-root"
+                  class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1ckov0h-MuiSvgIcon-root"
                   data-testid="StarBorderIcon"
                   focusable="false"
                   viewBox="0 0 24 24"
@@ -920,14 +918,14 @@ exports[`MovieDetails > should match snapshot 1`] = `
             </label>
             <input
               class="MuiRating-visuallyHidden"
-              id=":r19:"
+              id="star-rating-_r_19_"
               name="star-rating"
               type="radio"
               value="10"
             />
           </span>
           <label
-            class="MuiRating-label MuiRating-pristine css-dqr9h-MuiRating-label"
+            class="MuiRating-label MuiRating-pristine css-hlbajn-MuiRating-label"
           >
             <input
               class="MuiRating-visuallyHidden"
@@ -944,7 +942,7 @@ exports[`MovieDetails > should match snapshot 1`] = `
           </label>
         </span>
         <p
-          class="_info_30a570"
+          class="_info_fd611d"
         >
           Click on a star to select/change rating. The rating will be saved to your account.
         </p>

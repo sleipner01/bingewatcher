@@ -3,34 +3,36 @@
 exports[`MovieCard > should match snapshot 1`] = `
 <div>
   <div
-    class="_wrapper_8de2c1"
+    class="_wrapper_cf7bd4"
   >
     <a
-      class="_link_8de2c1"
+      class="_link_cf7bd4"
+      data-discover="true"
       href="/movie/111111"
     >
       <div
-        class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root _card_8de2c1 css-bhp9pd-MuiPaper-root-MuiCard-root"
+        class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root _card_cf7bd4 css-1j74uew-MuiPaper-root-MuiCard-root"
         data-testid="movie-card"
+        style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);"
       >
         <img
           alt="Foo Bar poster."
-          class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img movie-card-image css-o69gx8-MuiCardMedia-root"
+          class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img movie-card-image css-1kuwa16-MuiCardMedia-root"
           loading="lazy"
           src="https://image.tmdb.org/t/p/w400/mockPosterURL.jpg"
         />
         <div
-          class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+          class="MuiCardContent-root css-1lt5qva-MuiCardContent-root"
         >
           <div
             aria-label="title: Foo Bar."
-            class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom css-d3wcwz-MuiTypography-root"
+            class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom css-vjrxpc-MuiTypography-root"
           >
             Foo Bar
           </div>
           <p
             aria-label="genres:Adventure, Action"
-            class="MuiTypography-root MuiTypography-body2 css-xx3zdw-MuiTypography-root"
+            class="MuiTypography-root MuiTypography-body2 css-iodfsx-MuiTypography-root"
           >
             Adventure, Action
           </p>
@@ -38,13 +40,13 @@ exports[`MovieCard > should match snapshot 1`] = `
       </div>
     </a>
     <div
-      class="_smallContainer_5dd437"
+      class="_smallContainer_0a1d77"
       data-testid="watchlist-button"
     >
       <button
         aria-label="Add movie to watchlist"
         aria-pressed="false"
-        class="MuiButtonBase-root MuiToggleButton-root MuiToggleButton-sizeSmall MuiToggleButton-primary css-1dlyelz-MuiButtonBase-root-MuiToggleButton-root"
+        class="MuiButtonBase-root MuiToggleButton-root MuiToggleButton-sizeSmall MuiToggleButton-primary css-xtj3ox-MuiButtonBase-root-MuiToggleButton-root"
         data-testid="watchlist-toggle-button"
         tabindex="0"
         title="Add movie to watchlist"
@@ -53,18 +55,15 @@ exports[`MovieCard > should match snapshot 1`] = `
       >
         <svg
           aria-hidden="true"
-          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium _add_5dd437 css-i4bv87-MuiSvgIcon-root"
+          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium _add_0a1d77 css-1umw9bq-MuiSvgIcon-root"
           data-testid="BookmarkAddIcon"
           focusable="false"
           viewBox="0 0 24 24"
         >
           <path
-            d="M21 7h-2v2h-2V7h-2V5h2V3h2v2h2v2zm-2 14-7-3-7 3V5c0-1.1.9-2 2-2h7c-.63.84-1 1.87-1 3 0 2.76 2.24 5 5 5 .34 0 .68-.03 1-.1V21z"
+            d="M21 7h-2v2h-2V7h-2V5h2V3h2v2h2zm-2 14-7-3-7 3V5c0-1.1.9-2 2-2h7c-.63.84-1 1.87-1 3 0 2.76 2.24 5 5 5 .34 0 .68-.03 1-.1z"
           />
         </svg>
-        <span
-          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-        />
       </button>
     </div>
   </div>
