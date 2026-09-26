@@ -22,8 +22,8 @@
     "coverage:client": "bun --filter bingewatcher-frontend coverage",
     "build": "bun run build:client",
     "build:client": "bun --filter bingewatcher-frontend build",
-    "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
-    "lint:fix": "eslint . --fix && stylelint --fix \"**/src/**/*{css, js, ts, tsx, jsx}\"",
+    "lint": "oxlint --max-warnings 0",
+    "lint:fix": "oxlint --fix && stylelint --fix \"**/src/**/*{css, js, ts, tsx, jsx}\"",
     "lint:style": "stylelint \"**/src/**/*{scss, css, js, ts, tsx, jsx}\"",
     "lint:style:fix": "stylelint --fix \"**/src/**/*{css, js, ts, tsx, jsx}\"",
     "format": "prettier --write '**/src/**/*.{ts,tsx,js,jsx,scss,json,css}' --config .prettierrc.cjs",
@@ -36,19 +36,9 @@
   "author": "Team 16 | IT2810 NTNU",
   "license": "ISC",
   "devDependencies": {
-    "@eslint/js": "^9",
-    "@typescript/native": "npm:typescript@^7.0.2",
-    "eslint": "^9.39.5",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-import-resolver-typescript": "^4.4.5",
-    "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-prettier": "^5.5.6",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-react-refresh": "^0.5.7",
     "eslint-plugin-simple-import-sort": "^14.0.0",
-    "eslint-plugin-unused-imports": "^4.4.1",
-    "globals": "^17.12.0",
+    "oxlint": "^1.85.0",
+    "oxlint-tsgolint": "^7.0.2003",
     "postcss-less": "^6.0.0",
     "postcss-lit": "^1.4.1",
     "prettier": "^3.9.9",
@@ -56,7 +46,6 @@
     "stylelint-config-standard": "^40.0.0",
     "stylelint-config-standard-scss": "^17.0.0",
     "stylelint-scss": "^7.3.0",
-    "typescript": "npm:@typescript/typescript6@^6.0.2",
-    "typescript-eslint": "^8.70.1"
+    "typescript": "^7.0.2"
   }
 }
