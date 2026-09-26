@@ -1,28 +1,40 @@
-# CI/CD
+# Continuous integration
 
-This document contains information and explanations about the CI/CD pipeline for the project.
+CI runs on [GitHub Actions](../.github/workflows/ci.yml) for every pull request and every push to `main`. A new push cancels the run still in progress for the same branch.
 
-## Usage
+## Jobs
 
-Any script stricly made for the CI/CD pipeline uses "ci" within the name. This is to avoid confusion with other scripts. Look in the different `package.json` files to look at their configurations.
+The jobs run in parallel:
 
-## Testing
+| Job                | What it runs                                                                      |
+| ------------------ | --------------------------------------------------------------------------------- |
+| Lint and typecheck | `bun run lint`, `bun run lint:style`, `bun run format:check`, `bun run typecheck` |
+| Client unit tests  | `bun run test:unit` in `client`                                                   |
+| Server tests       | `bun test` in `server`, against an in-memory MongoDB                              |
+| End-to-end tests   | `bun run test:e2e:ci` in `client`, in Chromium, against the `test` database       |
 
-The pipeline runs tests for the entire project, to ensure that the code is working as intended. The aim is to run all available tests, but some tests are skipped due to compatability issues with the CI/CD runners. More information about this in the next two sections. All unit tests are run.
+There is no build job. Vercel builds the client and Render runs the server on deploy.
 
-Note: <i>The code coverage reported from the pipeline is stricly from the unit testing in the client.</i>
+To run the same checks locally, except the end-to-end tests:
 
-#### E2E
+```bash
+bun run check
+```
 
-The end to end tests are only running chromium because of compatability problems with webkit.
-Also resticting number of tests to limit stress on the NTNU runners, which are busy and slow in the first place.
+## Speed
 
-#### Server tests
+- The [setup-bun](../.github/actions/setup-bun/action.yml) composite action caches Bun's package store, and each job installs only the workspaces it needs.
+- The MongoDB binary for the server tests and Playwright's Chromium are cached between runs.
+- The end-to-end tests only install Chromium's headless shell. GitHub's Ubuntu runners already have the system libraries it needs.
 
-Due to incompatability with the main image, we decided to skip the server tests in the CI/CD pipeline. We could have imported a new image for the test, but we agreed to skip it to limit stress on the runners. The tests are run locally before deployment.
+## End-to-end tests
 
-## Linting
+The end-to-end job needs the `DB_URI` repository secret, set to the URI of the `test` database. It fails early with an error when the secret is missing. Pull requests from forks don't get repository secrets, so the job is skipped for them.
 
-The pipeline runs linting scripts for the entire projects, to ensure we maintain a consistent code style.
+The tests run one at a time in CI, since they share the database. When they fail, the Playwright report is uploaded as an artifact.
+
+## GitLab
+
+The project used to run on GitLab. The old [.gitlab-ci.yml](../.gitlab-ci.yml) is kept for reference but is no longer used.
 
 ### Back to [documentation](./README.md).

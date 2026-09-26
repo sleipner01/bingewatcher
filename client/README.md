@@ -1,98 +1,51 @@
 # Bingewatcher Client
 
-This folder contains the frontend code for the project. The frontend is built with React and TypeScript. The frontend is built with Vite, and uses Apollo Client to fetch data from the GraphQL API. Testing is done with Vitest and React Testing Library.
+The frontend is a React 19 app written in TypeScript and built with Vite. It fetches data from the GraphQL API with Apollo Client. Unit tests use Vitest and React Testing Library, and end-to-end tests use Playwright.
 
-This readme is intended to provide a brief overview of the project setup and available scripts. More detailed documentation can be found in the [docs](../docs) folder.
+More documentation is in the [docs](../docs/README.md) folder:
 
-## Client structure
+- [Project structure](../docs/filestructure-project.md)
+- [Component structure](../docs/filestructure-component.md)
+- [Testing strategy](../docs/testing.md)
 
-The client structure is described in [filestructure-project.md](../docs/filestructure-project.md).
+## Libraries
 
-## Folder/file structure
-
-The folder/file structure for components the frontend is described in [filestructure.md](../docs/filestructure-component.md).
-
-## Testing
-
-The testing strategy for the frontend is described in [testing.md](../docs/testing.md).
-
-This project uses Playwright for end to end testing. Before running end to end tests, you must [install playwright](../docs/playwright.md).
-
-## Third party libraries
-
-- [MUI](https://mui.com/) - React UI framework
-
-We have used MaterialUI for more effecient and faster development. MaterialUI provides a lot of components that we can use, and we have used some of them in our project.
-
-- [SCSS](https://sass-lang.com/) - CSS preprocessor
-
-We have used .SCSS files to style our components. This makes it easier to style our components, and we can use variables and mixins to make our code more reusable.
-
-- [Apollo Client](https://www.apollographql.com/docs/react/) - GraphQL client
-
-We have used Apollo Client to fetch data from the GraphQL API. Apollo Client provides a lot of useful features, such as caching, error handling, and more. As the server also uses Apollo, it was a natural choice to use Apollo Client.
-
-- [React Router](https://reactrouter.com/) - Routing library
-
-We have used React Router to handle routing in the project. React Router provides a lot of useful features, such as nested routes, redirects, and more. The routes are defined in the [Routes.tsx](./src/Routes.tsx) file.
-
-- [Playwright](https://playwright.dev/) - End to end testing library
-
-We have used Playwright to write end to end tests for the project. Playwright provides a lot of useful features, such as taking screenshots, mocking requests, and most importantly testing different browsers. It is also really flexible, and can provide complex and clever configurations for many projects. The tests are located in the [e2e](./e2e) folder.
+- [MUI](https://mui.com/) provides the UI components.
+- [SCSS modules](https://sass-lang.com/) style the components, with shared variables and breakpoints in [src/styles](./src/styles).
+- [Apollo Client](https://www.apollographql.com/docs/react/) fetches and caches data from the GraphQL API. The queries are typed in [src/graphql/queries.ts](./src/graphql/queries.ts).
+- [React Router](https://reactrouter.com/) handles routing. The routes are defined in [src/routes.tsx](./src/routes.tsx).
+- [Playwright](https://playwright.dev/) runs the end-to-end tests in [\_\_e2e\_\_](./__e2e__).
 
 ## Run the client
 
-Create a `.env` file in the root of the `client` folder with the following content:
+Create a `.env` file in the `client` folder with the URL of the server:
 
 ```env
-VITE_SERVER_URI={server-uri}
+VITE_SERVER_URI=http://localhost:4000
 ```
 
-> <i>Replace `{server-uri}` with the URL of the server you want to use.</i>
->
-> To set up the server, follow instructions in server [README.md](../server/README.md#configuration).
+To run the server locally, follow the [server README](../server/README.md#run-the-server-locally). Then install the dependencies from the repository root and start the client:
 
-If you have not already done so, run the following command to install all dependencies:
-
-```cli
+```bash
 bun install
-```
-
-> <i>Note: You will need to install the packages in root to enable Typescript and linting.</i>
-
-To run the client, run the following command:
-
-```cli
 bun run dev
 ```
 
-This will start the client on a local port number. Any code changes will trigger automatic browser updates.
+The client runs at http://localhost:5173 and reloads on code changes.
 
-## Available Scripts
+## Scripts
 
-This section provides an overview of the available scripts for this project. These scripts help you manage development, testing, building, and other maintenance tasks for the project.
+Run these from the `client` folder.
 
-### Setup
-
-| <div style="width:200px">Command</div> | Description                                                                                                                                           |
-| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `bun install`                          | Installs dependencies for `client`. <br> **Note**: You will need to install the packages in root to enable Typescript and Eslint.                     |
-| `bun run start`                        | Does the same as `bun run dev`                                                                                                                        |
-| `bun run dev`                          | Starts the project in development mode. The project will run locally on a local port number. Any code changes will trigger automatic browser updates. |
-
-### Test
-
-| <div style="width:200px">Command</div> | Description                                                                                                                                                                                                      |
-| -------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `bun run test`                         | Runs all tests. <br /><b>Note:</b> You must [set up Playwright](../docs/playwright.md) for this to work.                                                                                                         |
-| `bun run test:unit`                    | Runs strictly unit tests (in watch mode)                                                                                                                                                                         |
-| `bun run test:unit:no-watch`           | Strictly runs unit tests.                                                                                                                                                                                        |
-| `bun run coverage`                     | This script runs unit tests with code coverage using Vitest. After completion, it will generate code coverage reports that you can find in your project. You can find the reports [here](./coverage/index.html). |
-| `bun run test:e2e`                     | Runs end to end tests. <br /><b>Note:</b> You must [set up Playwright](../docs/playwright.md) for this to work.                                                                                                  |
-
-### Production
-
-| <div style="width:200px">Command</div> | Description                                                                                                                                                  |
-| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `bun run build`                        | Compiles and builds the project for production. The project will be built into the `/dist` folder.                                                           |
-| `bun run preview`                      | This script starts Vite in preview mode, allowing you to preview the production build locally before deployment. Please use this before deploying to the VM. |
+| <div style="width:170px">Command</div> | Description                                                                                       |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `bun run dev`                          | Starts the Vite dev server.                                                                       |
+| `bun run build`                        | Type-checks and builds the client into `dist`.                                                    |
+| `bun run preview`                      | Serves the production build locally.                                                              |
+| `bun run typecheck`                    | Type-checks the app, the config files and the end-to-end tests.                                   |
+| `bun run test`                         | Runs the unit tests, then the end-to-end tests.                                                   |
+| `bun run test:unit`                    | Runs the unit tests once.                                                                         |
+| `bun run test:unit:watch`              | Runs the unit tests in watch mode.                                                                |
+| `bun run coverage`                     | Runs the unit tests with coverage. The report is written to [coverage](./coverage/index.html).    |
+| `bun run test:e2e`                     | Runs the end-to-end tests in Chromium and Firefox. See [Playwright setup](../docs/playwright.md). |
+| `bun run test:e2e:ci`                  | Runs the end-to-end tests in Chromium only, as CI does.                                           |
