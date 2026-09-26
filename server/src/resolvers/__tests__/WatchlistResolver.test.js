@@ -1,6 +1,6 @@
+import { afterAll, afterEach, beforeAll, describe, expect, it } from 'bun:test';
 import { MongoMemoryServer } from 'mongodb-memory-server';
 import mongoose from 'mongoose';
-import { afterAll, afterEach, beforeAll, describe, expect, it } from 'vitest';
 
 import Genre from '../../models/Genre';
 import Movie from '../../models/Movie';

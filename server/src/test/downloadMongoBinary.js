@@ -1,6 +1,4 @@
 import { MongoBinary } from 'mongodb-memory-server';
 
-// Download once up front, so parallel test files don't race for the same lockfile
-export default async function downloadMongoBinary() {
-  await MongoBinary.getPath();
-}
+// Download once up front, so the test files don't each wait on the download inside a hook
+await MongoBinary.getPath();
