@@ -1,4 +1,4 @@
-import { useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client/react';
 import { Pagination } from '@mui/material';
 import { useState } from 'react';
 
@@ -41,7 +41,7 @@ export const Watchlist = () => {
 
   if (loading) return <Spinner width='100%' height='300px' />;
 
-  if (error) return <p>Something went wrong fetching your watchlist.</p>;
+  if (error || !data) return <p>Something went wrong fetching your watchlist.</p>;
 
   const length = data.getWatchlistCountByUserID;
   const count = Math.ceil(length / sizeLimit);

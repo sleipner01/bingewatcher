@@ -1,6 +1,26 @@
-import { gql } from '@apollo/client';
+import { gql, TypedDocumentNode } from '@apollo/client';
 
-export const GET_MOVIES = gql`
+import { Genre, Movie } from '../types';
+
+export interface MoviesPageData {
+  getMovies?: Movie[];
+  getMoviesByGenre?: Movie[];
+  getMoviesByTitleAZ?: Movie[];
+  getMoviesByRating?: Movie[];
+  getMovieCountByGenre: number;
+}
+
+export interface MovieSearchResult {
+  _id: string;
+  title: string;
+}
+
+interface WatchlistMutationData {
+  userID: string;
+  movies: Pick<Movie, '_id'>[];
+}
+
+export const GET_MOVIES: TypedDocumentNode<MoviesPageData> = gql`
   query getMovies($page: Int!, $userId: String) {
     getMovies(page: $page, userID: $userId) {
       _id
@@ -16,7 +36,7 @@ export const GET_MOVIES = gql`
   }
 `;
 
-export const GET_MOVIE = gql`
+export const GET_MOVIE: TypedDocumentNode<{ getMovieById: Movie }> = gql`
   query getMovieById($id: Int!, $userId: String) {
     getMovieById(id: $id) {
       _id
@@ -36,7 +56,7 @@ export const GET_MOVIE = gql`
   }
 `;
 
-export const GET_MOVIES_BY_GENRE = gql`
+export const GET_MOVIES_BY_GENRE: TypedDocumentNode<MoviesPageData> = gql`
   query getMoviesByGenre($page: Int!, $genreId: Int!, $userId: String!) {
     getMoviesByGenre(page: $page, genreId: $genreId) {
       _id
@@ -52,7 +72,7 @@ export const GET_MOVIES_BY_GENRE = gql`
   }
 `;
 
-export const GET_MOVIES_BY_TITLE_AZ = gql`
+export const GET_MOVIES_BY_TITLE_AZ: TypedDocumentNode<MoviesPageData> = gql`
   query getMoviesByTitleAZ($page: Int!, $order: String!, $genreId: Int, $userId: String) {
     getMoviesByTitleAZ(page: $page, order: $order, genreId: $genreId) {
       _id
@@ -68,7 +88,7 @@ export const GET_MOVIES_BY_TITLE_AZ = gql`
   }
 `;
 
-export const GET_MOVIES_BY_RATING = gql`
+export const GET_MOVIES_BY_RATING: TypedDocumentNode<MoviesPageData> = gql`
   query getMoviesByRating($page: Int!, $order: String!, $genreId: Int, $userId: String) {
     getMoviesByRating(page: $page, order: $order, genreId: $genreId) {
       _id
@@ -84,7 +104,7 @@ export const GET_MOVIES_BY_RATING = gql`
   }
 `;
 
-export const GET_MOVIES_BY_TITLE = gql`
+export const GET_MOVIES_BY_TITLE: TypedDocumentNode<{ getMoviesByTitle: MovieSearchResult[] }> = gql`
   query getMoviesByTitle($title: String!, $limit: Int!, $offset: Int!) {
     getMoviesByTitle(title: $title, limit: $limit, offset: $offset) {
       _id
@@ -93,7 +113,7 @@ export const GET_MOVIES_BY_TITLE = gql`
   }
 `;
 
-export const REMOVE_MOVIE_FROM_WATCHLIST = gql`
+export const REMOVE_MOVIE_FROM_WATCHLIST: TypedDocumentNode<{ removeMovieFromWatchlist: WatchlistMutationData }> = gql`
   mutation Mutation($userId: String!, $movieId: Int!) {
     removeMovieFromWatchlist(userID: $userId, movieID: $movieId) {
       userID
@@ -104,7 +124,7 @@ export const REMOVE_MOVIE_FROM_WATCHLIST = gql`
   }
 `;
 
-export const ADD_MOVIE_TO_WATCHLIST = gql`
+export const ADD_MOVIE_TO_WATCHLIST: TypedDocumentNode<{ addMovieToWatchlist: WatchlistMutationData }> = gql`
   mutation Mutation($userId: String!, $movieId: Int!) {
     addMovieToWatchlist(userID: $userId, movieID: $movieId) {
       userID
@@ -115,7 +135,10 @@ export const ADD_MOVIE_TO_WATCHLIST = gql`
   }
 `;
 
-export const GET_WATCHLIST_BY_USER_ID = gql`
+export const GET_WATCHLIST_BY_USER_ID: TypedDocumentNode<{
+  getWatchlistByUserID: { userID: string; movies: Movie[] };
+  getWatchlistCountByUserID: number;
+}> = gql`
   query Query($userId: String!, $page: Int!) {
     getWatchlistByUserID(userID: $userId, page: $page) {
       userID
@@ -134,7 +157,7 @@ export const GET_WATCHLIST_BY_USER_ID = gql`
   }
 `;
 
-export const GET_MOVIE_RATING_WITH_USERID = gql`
+export const GET_MOVIE_RATING_WITH_USERID: TypedDocumentNode<{ getMovieRatingWithUserID: { rating: number } }> = gql`
   query getMovieRatingWithUserID($userID: String!, $movieID: Int!) {
     getMovieRatingWithUserID(userID: $userID, movieID: $movieID) {
       rating
@@ -142,7 +165,7 @@ export const GET_MOVIE_RATING_WITH_USERID = gql`
   }
 `;
 
-export const ADD_RATING = gql`
+export const ADD_RATING: TypedDocumentNode<{ addRating: { rating: number } }> = gql`
   mutation addRating($userID: String!, $movieID: Int!, $rating: Float!) {
     addRating(userID: $userID, movieID: $movieID, rating: $rating) {
       rating
@@ -150,7 +173,7 @@ export const ADD_RATING = gql`
   }
 `;
 
-export const GET_GENRES = gql`
+export const GET_GENRES: TypedDocumentNode<{ getGenres: Genre[] }> = gql`
   query getGenres {
     getGenres {
       _id

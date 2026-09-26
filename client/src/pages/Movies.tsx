@@ -1,4 +1,4 @@
-import { useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client/react';
 import { Pagination } from '@mui/material';
 import { useEffect, useState } from 'react';
 
@@ -53,6 +53,8 @@ export const Movies = () => {
     }
   }, [data]);
 
+  const movies = data?.getMovies || data?.getMoviesByGenre || data?.getMoviesByRating || data?.getMoviesByTitleAZ || [];
+
   const startMovie = (page - 1) * sizeLimit + 1;
   const endMovie = Math.min(page * sizeLimit, count || 0);
 
@@ -82,10 +84,8 @@ export const Movies = () => {
       {error && <p>Something went wrong while fetching movies.</p>}
       {data && !loading && (
         <>
-          {data.length === 0 && <p className={styles.noMovies}>No movies found</p>}
-          <MovieList
-            movies={data?.getMovies || data?.getMoviesByGenre || data?.getMoviesByRating || data?.getMoviesByTitleAZ}
-          />
+          {movies.length === 0 && <p className={styles.noMovies}>No movies found</p>}
+          <MovieList movies={movies} />
           <Pagination
             count={Math.ceil((count || sizeLimit) / sizeLimit)}
             page={page}
