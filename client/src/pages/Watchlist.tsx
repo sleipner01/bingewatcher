@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 import { Spinner } from '../components/loading/Loading';
 import { MovieList } from '../components/movieList/MovieList';
-import { useUser } from '../context/UserContext';
+import { useUser } from '../context/useUser';
 import { GET_WATCHLIST_BY_USER_ID } from '../graphql/queries';
 import styles from './Movies.module.scss';
 

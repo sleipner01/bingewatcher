@@ -5,7 +5,7 @@ import Popover from '@mui/material/Popover';
 import { useState } from 'react';
 import { Link } from 'react-router';
 
-import { useUser } from '../../context/UserContext';
+import { useUser } from '../../context/useUser';
 import DarkModeToggle from '../darkModeToggle/DarkModeToggle';
 import styles from './LoginButton.module.scss';
 

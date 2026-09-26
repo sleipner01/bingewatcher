@@ -3,7 +3,7 @@ import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import Button from '@mui/material/Button';
 import React from 'react';
 
-import { useUser } from '../../context/UserContext';
+import { useUser } from '../../context/useUser';
 import styles from './Dark.module.scss';
 
 /**

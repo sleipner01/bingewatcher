@@ -6,7 +6,7 @@ import { FilterSort } from '../components/filterSort/FilterSort';
 import { Spinner } from '../components/loading/Loading';
 import { MovieList } from '../components/movieList/MovieList';
 import { Search } from '../components/search/Search';
-import { useUser } from '../context/UserContext';
+import { useUser } from '../context/useUser';
 import { getCachedFilterValues, setCachedFilterValues } from '../graphql/cachedFilterValues';
 import { Sort } from '../types';
 import { determineQueryAndVariables } from '../utils/moviesUtils';
