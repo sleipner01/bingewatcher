@@ -1,27 +1,24 @@
 {
   "name": "bingewatcher-server",
-  "private": true,
   "version": "1.0.0",
-  "description": "Bingewatcher",
-  "type": "module",
-  "scripts": {
-    "start": "bun src/index.js",
-    "start:production": "NODE_ENV=production bun src/index.js",
-    "dev": "bun --watch src/index.js",
-    "test": "vitest run"
-  },
   "author": "Team 16 | IT2810 NTNU",
-  "license": "ISC",
-  "devDependencies": {
-    "vite": "^8.3.1",
-    "vitest": "^5.0.2"
-  },
   "dependencies": {
     "@apollo/server": "^5.5.1",
     "@graphql-tools/merge": "^9.2.4",
     "graphql": "^16.14.2",
-    "mongodb": "^7.6.0",
-    "mongodb-memory-server": "^11.3.0",
     "mongoose": "^9.10.2"
+  },
+  "description": "Bingewatcher",
+  "license": "ISC",
+  "private": true,
+  "scripts": {
+    "start": "bun src/index.js",
+    "start:production": "NODE_ENV=production bun src/index.js",
+    "dev": "bun --watch src/index.js",
+    "test": "bun test"
+  },
+  "type": "module",
+  "devDependencies": {
+    "mongodb-memory-server": "^11.3.0"
   }
 }

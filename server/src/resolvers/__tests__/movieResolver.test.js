@@ -1,6 +1,6 @@
+import { afterAll, beforeAll, describe, expect, it } from 'bun:test';
 import { MongoMemoryServer } from 'mongodb-memory-server';
 import mongoose from 'mongoose';
-import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
 import Genre from '../../models/Genre';
 import Movie from '../../models/Movie';
@@ -77,7 +77,7 @@ describe('movieResolver', () => {
         const result = await movieQuery.getMoviesByGenre(null, { genreId: genre1._id.toString() });
         result.forEach((movie) => {
           // Tests that all movies in the result array has the same and correct genre
-          expect(movie.genre_ids).toEqual(expect.arrayContaining([expect.objectContaining(genre1)]));
+          expect(movie.genre_ids.map((genre) => genre._id)).toContain(genre1._id);
         });
       });
 
