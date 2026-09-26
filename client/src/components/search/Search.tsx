@@ -139,12 +139,14 @@ export const Search: React.FC = () => {
         onChange={handleInputChange}
         onKeyDown={(e) => handleKeyDown(e, data?.getMoviesByTitle[0])}
         className={styles.searchInput}
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position='start'>
-              <SearchIcon />
-            </InputAdornment>
-          ),
+        slotProps={{
+          input: {
+            startAdornment: (
+              <InputAdornment position='start'>
+                <SearchIcon />
+              </InputAdornment>
+            ),
+          },
         }}
       />
 
