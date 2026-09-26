@@ -1,4 +1,4 @@
-import { useMutation, useQuery } from '@apollo/client';
+import { useMutation, useQuery } from '@apollo/client/react';
 import Rating from '@mui/material/Rating';
 import { FC } from 'react';
 
@@ -29,7 +29,9 @@ export const StarRating: FC<StarRatingProps> = ({ movieId, user }) => {
 
   const [addRating] = useMutation(ADD_RATING, {
     // Update the cache after the mutation is executed successfully
-    update(cache, { data: { addRating } }) {
+    update(cache, { data }) {
+      if (!data) return;
+
       // Refetch the rating query to get the latest data from the server
       refetch({ userID: user?.id, movieID: MId });
 
@@ -40,7 +42,7 @@ export const StarRating: FC<StarRatingProps> = ({ movieId, user }) => {
         data: {
           getMovieRatingWithUserID: {
             ...ratingData?.getMovieRatingWithUserID, // Preserve existing data
-            rating: addRating.rating, // Update the rating value
+            rating: data.addRating.rating, // Update the rating value
           },
         },
       });

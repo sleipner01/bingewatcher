@@ -1,4 +1,4 @@
-import { useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client/react';
 import { useParams } from 'react-router';
 
 import { Spinner } from '../components/loading/Loading';
@@ -18,7 +18,7 @@ export const Movie = () => {
 
   if (loading) return <Spinner width='100%' height='400px' />;
 
-  if (error)
+  if (error || !data)
     return <div style={{ color: 'var(--color-text)' }}>Something went wrong while fetching movie details...</div>;
 
   return <MovieDetails movie={data.getMovieById} />;

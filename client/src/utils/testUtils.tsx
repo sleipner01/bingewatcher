@@ -1,5 +1,6 @@
-import { ApolloClient, ApolloProvider, HttpLink, InMemoryCache } from '@apollo/client';
-import { MockedProvider } from '@apollo/client/testing';
+import { ApolloClient, HttpLink, InMemoryCache } from '@apollo/client';
+import { ApolloProvider } from '@apollo/client/react';
+import { MockedProvider } from '@apollo/client/testing/react';
 import { render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router';
 
@@ -35,7 +36,7 @@ export const renderWithProviders = ({ child, mockUser, mocks, providerMocks }: P
   render(
     <MockUserProvider mockUser={mockUser} {...providerMocks}>
       <ApolloProvider client={client}>
-        <MockedProvider mocks={mocks} addTypename={false}>
+        <MockedProvider mocks={mocks}>
           <BrowserRouter>{child}</BrowserRouter>
         </MockedProvider>
       </ApolloProvider>

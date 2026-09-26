@@ -1,4 +1,4 @@
-import { useMutation } from '@apollo/client';
+import { useMutation } from '@apollo/client/react';
 import { BookmarkAdd, BookmarkRemove } from '@mui/icons-material';
 import { ToggleButton } from '@mui/material';
 import { FC, memo, useState } from 'react';

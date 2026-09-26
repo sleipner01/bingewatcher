@@ -1,16 +1,11 @@
-import { useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client/react';
 import SearchIcon from '@mui/icons-material/Search';
 import { InputAdornment, TextField } from '@mui/material';
 import React, { ChangeEvent, useCallback, useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router';
 
-import { GET_MOVIES_BY_TITLE } from '../../graphql/queries';
+import { GET_MOVIES_BY_TITLE, MovieSearchResult } from '../../graphql/queries';
 import styles from './Search.module.scss';
-
-interface SearchResult {
-  title: string;
-  _id: string;
-}
 
 /**
  *
@@ -52,6 +47,7 @@ export const Search: React.FC = () => {
     variables: { title: debouncedSearchTerm, limit: movieFetchLimit, offset: 0 },
     skip: !debouncedSearchTerm, // Skips the query if searchTerm is empty
   });
+  const movies = data?.getMoviesByTitle ?? [];
 
   useEffect(() => {
     movieRefs.current = movieRefs.current.slice(0, data?.getMoviesByTitle.length);
@@ -86,7 +82,7 @@ export const Search: React.FC = () => {
 
   // Use useCallback to prevent to many rerenders
   const handleMovieSelect = useCallback(
-    (movie: SearchResult) => {
+    (movie: MovieSearchResult) => {
       navigate(`/movie/${movie._id}`);
       setIsDropdownOpen(false);
       setSearchTerm('');
@@ -109,18 +105,18 @@ export const Search: React.FC = () => {
     };
   }, []);
 
-  const handleKeyDown = (e: React.KeyboardEvent, movie: SearchResult) => {
+  const handleKeyDown = (e: React.KeyboardEvent, movie?: MovieSearchResult) => {
     if (e.key === 'Tab') {
       if (e.shiftKey) {
         setTabIndex(tabIndex - 1);
         return;
       }
       setTabIndex(tabIndex + 1);
-      if (data?.getMoviesByTitle.length < limit && tabIndex === data?.getMoviesByTitle.length) {
+      if (data && movies.length < limit && tabIndex === movies.length) {
         setIsDropdownOpen(false);
       }
     }
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter' && movie) {
       handleMovieSelect(movie);
     }
     if (e.key === 'Escape') {
@@ -137,7 +133,7 @@ export const Search: React.FC = () => {
         placeholder='Search by title...'
         value={searchTerm}
         onChange={handleInputChange}
-        onKeyDown={(e) => handleKeyDown(e, data?.getMoviesByTitle[0])}
+        onKeyDown={(e) => handleKeyDown(e, movies[0])}
         className={styles.searchInput}
         slotProps={{
           input: {
@@ -156,9 +152,9 @@ export const Search: React.FC = () => {
           <li id={styles.notFound}>No results found for {`"${searchTerm}"`}</li>
         </ul>
       )}
-      {data?.getMoviesByTitle.length > 0 && isDropdownOpen && (
+      {movies.length > 0 && isDropdownOpen && (
         <ul className={styles.dropdown} ref={dropdownRef} tabIndex={0} aria-label='Search result for movie title'>
-          {data.getMoviesByTitle.map((movie: SearchResult, index: number) => (
+          {movies.map((movie, index) => (
             <li
               key={movie._id}
               ref={(e) => {
@@ -173,7 +169,7 @@ export const Search: React.FC = () => {
               {movie.title}
             </li>
           ))}
-          {data?.getMoviesByTitle.length % 20 === 0 && !hideLoadMore && (
+          {movies.length % 20 === 0 && !hideLoadMore && (
             <li
               className={styles.loadMore}
               onClick={loadMoreMovies}
