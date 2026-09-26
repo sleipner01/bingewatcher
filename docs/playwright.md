@@ -11,7 +11,7 @@ cd client
 Then run the following command to install Playwright:
 
 ```cli
-npx playwright install
+bunx playwright install
 ```
 
 Follow the default installation instructions.

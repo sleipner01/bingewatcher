@@ -2,7 +2,7 @@
 
 This folder contains the server code for the project. The server is built with Node.js and JavaScript. The server is built with Apollo Server and uses Mongoose to connect to the MongoDB database. Testing is done with Vitest.
 
-This readme is intended to provide a brief overview of the project setup and available npm scripts. More detailed documentation can be found in the [docs](../docs) folder.
+This readme is intended to provide a brief overview of the project setup and available scripts. More detailed documentation can be found in the [docs](../docs) folder.
 
 ## Remote Connection
 
@@ -81,7 +81,7 @@ More information about the database can be read in the [database documentation](
 If you have not already done so, run the following command to install all dependencies:
 
 ```cli
-npm install
+bun install
 ```
 
 > <i>Note: You will need to install the packages in root to enable Typescript and linting.</i>
@@ -111,53 +111,53 @@ URI = <mongodb-production-uri>
 To start development server, run:
 
 ```bash
-npm run dev
+bun run dev
 ```
 
-This will by default start the server on port 4000. Any code changes will trigger automatic server restart. Read more about [nodemon](https://www.npmjs.com/package/nodemon).
+This will by default start the server on port 4000. Any code changes will trigger automatic server restart. The server runs with `bun --watch`.
 
-## Available NPM Scripts
+## Available Scripts
 
 ### Setup
 
 | <div style="width:210px">Command</div> | Description                                                                                                                                                                                                         |
 | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `npm install`                          | Installs dependencies for `server`. <br> **Note**: You will need to install the packages in root to enable Typescript and linting.                                                                                  |
-| `npm start`                            | Starts the server with default configuration.<br /> **Note**: You will need a `.env` file with a valid URI.                                                                                                         |
-| `npm run dev`                          | Starts the project in development mode. The project will run locally on a local port number. Any code changes will trigger automatic browser updates.<br /> **Note**: You will need a `.env` file with a valid URI. |
-| `npm run start:production`             | Starts the project in production mode. The project will run locally on a local port number.<br /> **Note**: You will need a `.env.production` file with a valid URI to the production database.                     |
+| `bun install`                          | Installs dependencies for `server`. <br> **Note**: You will need to install the packages in root to enable Typescript and linting.                                                                                  |
+| `bun run start`                            | Starts the server with default configuration.<br /> **Note**: You will need a `.env` file with a valid URI.                                                                                                         |
+| `bun run dev`                          | Starts the project in development mode. The project will run locally on a local port number. Any code changes will trigger automatic browser updates.<br /> **Note**: You will need a `.env` file with a valid URI. |
+| `bun run start:production`             | Starts the project in production mode. The project will run locally on a local port number.<br /> **Note**: You will need a `.env.production` file with a valid URI to the production database.                     |
 
 ### Testing
 
 | <div style="width:210px">Command</div> | Description                                |
 | -------------------------------------- | ------------------------------------------ |
-| `npm run test`                         | Runs all tests for the server with Vitest. |
+| `bun run test`                         | Runs all tests for the server with Vitest. |
 
 ### Manual environment
 
-<i>To configure the URI of the database manually, add the URI as an argument to the `npm start` command in manual environment:</i>
+<i>To configure the URI of the database manually, add the URI as an argument to the `bun run start` command in manual environment:</i>
 
 ```bash
-NODE_ENV=manual npm start mongodb://localhost:27017/bingewatcher
+NODE_ENV=manual bun run start mongodb://localhost:27017/bingewatcher
 ```
 
-Within any environment, you can also set the port manually by prepending the `PORT` variable to the `npm start` command:
+Within any environment, you can also set the port manually by prepending the `PORT` variable to the `bun run start` command:
 
 ```bash
-PORT=4000 npm start
+PORT=4000 bun run start
 ```
 
 ### CI/CD
 
-To start the server in a CI environment add the database URI as an argument to the `npm start` command through a secret.
+To start the server in a CI environment add the database URI as an argument to the `bun run start` command through a secret.
 Say the secret is called `DB_URI`, the CI config should call:
 
 ```bash
-npm start $DB_URI
+bun run start $DB_URI
 ```
 
 To simulate the command locally, run:
 
 ```bash
-CI=true npm start $DB_URI
+CI=true bun run start $DB_URI
 ```

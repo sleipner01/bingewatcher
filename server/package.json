@@ -5,16 +5,14 @@
   "description": "Bingewatcher",
   "type": "module",
   "scripts": {
-    "start": "node src/index.js",
-    "start:production": "NODE_ENV=production node src/index.js",
-    "dev": "nodemon src/index.js",
+    "start": "bun src/index.js",
+    "start:production": "NODE_ENV=production bun src/index.js",
+    "dev": "bun --watch src/index.js",
     "test": "vitest run"
   },
   "author": "Team 16 | IT2810 NTNU",
   "license": "ISC",
   "devDependencies": {
-    "dotenv": "^16.3.1",
-    "nodemon": "^3.0.1",
     "vitest": "^0.34.6"
   },
   "dependencies": {
@@ -22,6 +20,8 @@
     "graphql": "^16.8.1",
     "mongodb": "^6.2.0",
     "mongodb-memory-server": "^9.0.1",
-    "mongoose": "^7.6.3"
+    "mongoose": "^7.6.3",
+    "dotenv": "^16.3.1",
+    "@graphql-tools/merge": "^9.0.0"
   }
 }
