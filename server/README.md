@@ -62,28 +62,28 @@ The server runs at http://localhost:4000 and restarts on code changes.
 
 The server reads its settings from environment variables, which Bun also loads from `.env` files:
 
-| Variable   | Description                                                                                                                 |
-| ---------- | --------------------------------------------------------------------------------------------------------------------------- |
-| `URI`      | MongoDB connection string.                                                                                                  |
-| `PORT`     | Port to listen on. Defaults to `4000`.                                                                                      |
-| `NODE_ENV` | `production` also loads `.env.production` on top of `.env`. With `manual`, the URI is read from the first argument instead. |
-| `CI`       | When set, the URI is read from the first argument instead, as the end-to-end tests do in CI.                                |
+| Variable   | Description                                                 |
+| ---------- | ----------------------------------------------------------- |
+| `URI`      | MongoDB connection string.                                  |
+| `PORT`     | Port to listen on. Defaults to `4000`.                      |
+| `NODE_ENV` | `production` also loads `.env.production` on top of `.env`. |
 
-To pass the URI as an argument:
+A URI passed as the first argument takes precedence over `URI`:
 
 ```bash
-NODE_ENV=manual bun run start mongodb://localhost:27017/bingewatcher
+bun run start mongodb://localhost:27017/bingewatcher
 ```
 
 ## Scripts
 
 Run these from the `server` folder.
 
-| <div style="width:190px">Command</div> | Description                                                  |
-| -------------------------------------- | ------------------------------------------------------------ |
-| `bun run dev`                          | Starts the server in watch mode.                             |
-| `bun run start`                        | Starts the server.                                           |
-| `bun run start:production`             | Starts the server with `NODE_ENV=production`.                |
-| `bun run test`                         | Runs the tests with `bun test` against an in-memory MongoDB. |
+| <div style="width:190px">Command</div> | Description                                                                                    |
+| -------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `bun run dev`                          | Starts the server in watch mode.                                                               |
+| `bun run start`                        | Starts the server.                                                                             |
+| `bun run start:production`             | Starts the server with `NODE_ENV=production`.                                                  |
+| `bun run start:e2e`                    | Starts the server against an in-memory MongoDB with seeded movies, as the end-to-end tests do. |
+| `bun run test`                         | Runs the tests with `bun test` against an in-memory MongoDB.                                   |
 
-The first test run downloads a MongoDB binary to `~/.cache/mongodb-binaries`.
+The first run of the tests or of `start:e2e` downloads a MongoDB binary to `~/.cache/mongodb-binaries`.

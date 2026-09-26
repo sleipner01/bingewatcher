@@ -41,7 +41,7 @@ The root holds the shared tooling (TypeScript, Oxlint, Stylelint, Prettier) and 
 ## Requirements
 
 - [Bun](https://bun.sh) 1.4 or newer. The exact version is pinned in `packageManager` in [package.json](./package.json).
-- A MongoDB connection string for the server. Ask the contributors for access to the `test` database, which the end-to-end tests expect.
+- A MongoDB connection string to run the server against real data. The tests don't need one.
 
 Install Bun with:
 
@@ -119,26 +119,24 @@ The repository recommends VS Code extensions for Oxc, Prettier and Stylelint, an
 
 ## End-to-end tests
 
-The Playwright tests run against the `test` database, since they expect its movies. Before the first run, install the browsers:
+The Playwright tests run against an in-memory MongoDB seeded with a small set of movies, so they need no database access. Before the first run, install the browsers:
 
 ```bash
 cd client
 bunx playwright install chromium firefox
 ```
 
-With `server/.env` pointing at the test database, run:
+Then run:
 
 ```bash
 bun run test:e2e
 ```
 
-Playwright starts the client and server, or reuses them if they are already running. See [docs/playwright.md](./docs/playwright.md) for details.
+Playwright starts its own client and server on separate ports. Tests tagged `@test-db` expect the movies in the shared `test` database and are skipped. See [docs/playwright.md](./docs/playwright.md) for how to run them.
 
 ## Continuous integration
 
-[GitHub Actions](./.github/workflows/ci.yml) runs on every pull request and on pushes to `main`. Lint and typecheck, client unit tests, server tests and end-to-end tests run as parallel jobs. There is no build job, since Vercel and Render build on deploy.
-
-The end-to-end job needs a `DB_URI` repository secret with the test database URI. See [docs/ci.md](./docs/ci.md).
+[GitHub Actions](./.github/workflows/ci.yml) runs on every pull request and on pushes to `main`. Lint and typecheck, client unit tests, server tests and end-to-end tests run as parallel jobs. There is no build job, since Vercel and Render build on deploy. See [docs/ci.md](./docs/ci.md).
 
 ## Deployment
 

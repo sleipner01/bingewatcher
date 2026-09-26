@@ -6,12 +6,12 @@ CI runs on [GitHub Actions](../.github/workflows/ci.yml) for every pull request 
 
 The jobs run in parallel:
 
-| Job                | What it runs                                                                      |
-| ------------------ | --------------------------------------------------------------------------------- |
-| Lint and typecheck | `bun run lint`, `bun run lint:style`, `bun run format:check`, `bun run typecheck` |
-| Client unit tests  | `bun run test:unit` in `client`                                                   |
-| Server tests       | `bun test` in `server`, against an in-memory MongoDB                              |
-| End-to-end tests   | `bun run test:e2e:ci` in `client`, in Chromium, against the `test` database       |
+| Job                | What it runs                                                                       |
+| ------------------ | ---------------------------------------------------------------------------------- |
+| Lint and typecheck | `bun run lint`, `bun run lint:style`, `bun run format:check`, `bun run typecheck`  |
+| Client unit tests  | `bun run test:unit` in `client`                                                    |
+| Server tests       | `bun test` in `server`, against an in-memory MongoDB                               |
+| End-to-end tests   | `bun run test:e2e:ci` in `client`, in Chromium, against a seeded in-memory MongoDB |
 
 There is no build job. Vercel builds the client and Render runs the server on deploy.
 
@@ -24,12 +24,12 @@ bun run check
 ## Speed
 
 - The [setup-bun](../.github/actions/setup-bun/action.yml) composite action caches Bun's package store, and each job installs only the workspaces it needs.
-- The MongoDB binary for the server tests and Playwright's Chromium are cached between runs.
+- The MongoDB binary and Playwright's Chromium are cached between runs.
 - The end-to-end tests only install Chromium's headless shell. GitHub's Ubuntu runners already have the system libraries it needs.
 
 ## End-to-end tests
 
-The end-to-end job needs the `DB_URI` repository secret, set to the URI of the `test` database. It fails early with an error when the secret is missing. Pull requests from forks don't get repository secrets, so the job is skipped for them.
+The end-to-end job needs no secrets. The server runs against an in-memory MongoDB seeded with a small set of movies, and tests tagged `@test-db`, which expect the shared `test` database, are skipped. See [Playwright setup](./playwright.md).
 
 The tests run one at a time in CI, since they share the database. When they fail, the Playwright report is uploaded as an artifact.
 
