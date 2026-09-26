@@ -8,7 +8,7 @@ test('search', async ({ page }) => {
   await page.getByPlaceholder('Search by title...').click();
   await page.getByPlaceholder('Search by title...').fill('let');
   await page.getByLabel('Movie: Let Her Kill You').click();
-  expect(page.waitForURL('**/movie/852436')).toBeTruthy();
+  await page.waitForURL('**/movie/852436');
   await expect(page.getByRole('heading', { name: 'Let Her Kill You (2023)' })).toBeVisible();
 });
 
@@ -102,7 +102,7 @@ test('global state of sorting & filtering', async ({ page }) => {
   await page.getByRole('option', { name: 'Rating: High to Low' }).click();
   const movieCards1 = page.locator('[data-testid="movie-card"]');
   await expect(movieCards1.first()).toContainText('Oppenheimer');
-  movieCards1.first().click();
+  await movieCards1.first().click();
 
   // Go back to searches
   await page.getByLabel('link back to movie page').click();
@@ -180,7 +180,7 @@ test('reviews affect score', async ({ page }) => {
   await page.getByTestId('login-button').click();
 
   // Using a movie with bad reviews to ensure the sorting tests stays the same
-  await page.goto('/project2/movie/852436');
+  await page.goto('/movie/852436');
   const firstCount = Number(await page.getByTestId('vote-count').innerText());
   await page
     .locator('label')
@@ -190,7 +190,7 @@ test('reviews affect score', async ({ page }) => {
   // Give the page time to update
   await page.waitForTimeout(1000);
   const secondCount = Number(await page.getByTestId('vote-count').innerText());
-  await expect(secondCount).toBeGreaterThan(firstCount);
+  expect(secondCount).toBeGreaterThan(firstCount);
 
   // Check that the the count stays the same if clicking again
   await page
@@ -200,12 +200,12 @@ test('reviews affect score', async ({ page }) => {
   // Give the page time to update
   await page.waitForTimeout(1000);
   const thirdCount = Number(await page.getByTestId('vote-count').innerText());
-  await expect(thirdCount).toBe(secondCount);
+  expect(thirdCount).toBe(secondCount);
 
   // Check that the count stays the same after reloading the page and clicking again
-  page.reload();
+  await page.reload();
   const fourthCount = Number(await page.getByTestId('vote-count').innerText());
-  await expect(fourthCount).toBe(secondCount);
+  expect(fourthCount).toBe(secondCount);
   // Give the page time to update
   await page
     .locator('label')
@@ -213,5 +213,5 @@ test('reviews affect score', async ({ page }) => {
     .click();
   await page.waitForTimeout(1000);
   const fifthCount = Number(await page.getByTestId('vote-count').innerText());
-  await expect(fifthCount).toBe(secondCount);
+  expect(fifthCount).toBe(secondCount);
 });

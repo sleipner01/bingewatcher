@@ -42,14 +42,14 @@ describe('UserContext', () => {
     await waitFor(() => expect(getByTestId('user-name').textContent).not.toHaveLength(0));
   });
 
-  it('sets a user', () => {
+  it('sets a user', async () => {
     const { getByTestId } = render(
       <UserProvider>
         <TestingComponent />
       </UserProvider>,
     );
     fireEvent.click(getByTestId('set-user'));
-    waitFor(() => expect(getByTestId('user-name').textContent).toBe('test'));
+    await waitFor(() => expect(getByTestId('user-name').textContent).toBe('test'));
   });
 
   it('remembers the user when it logs in again', async () => {

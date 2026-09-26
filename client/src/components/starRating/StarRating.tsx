@@ -33,7 +33,7 @@ export const StarRating: FC<StarRatingProps> = ({ movieId, user }) => {
       if (!data) return;
 
       // Refetch the rating query to get the latest data from the server
-      refetch({ userID: user?.id, movieID: MId });
+      void refetch({ userID: user?.id, movieID: MId });
 
       // Update the ratingData in the cache with the new rating value
       cache.writeQuery({
@@ -60,7 +60,7 @@ export const StarRating: FC<StarRatingProps> = ({ movieId, user }) => {
 
   const handleRating = (rating: number | null) => {
     if (rating && user) {
-      addRating({ variables: { userID: user.id, movieID: MId, rating: rating } });
+      void addRating({ variables: { userID: user.id, movieID: MId, rating: rating } });
     }
   };
 
