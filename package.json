@@ -1,5 +1,5 @@
 {
-  "name": "prosjekt-2",
+  "name": "bingewatcher",
   "version": "1.0.0",
   "private": true,
   "description": "Bingewatcher",
@@ -9,26 +9,23 @@
     "client",
     "server"
   ],
-  "directories": {
-    "doc": "docs"
-  },
   "scripts": {
     "dev": "bun --filter '*' dev",
     "dev:client": "bun --filter bingewatcher-frontend dev",
     "dev:server": "bun --filter bingewatcher-server dev",
-    "test": "bun --filter '*' test",
-    "test:client": "bun --filter bingewatcher-frontend test",
+    "build": "bun --filter bingewatcher-frontend build",
+    "typecheck": "bun --filter bingewatcher-frontend typecheck",
+    "test": "bun run test:unit && bun run test:server",
+    "test:unit": "bun --filter bingewatcher-frontend test:unit",
     "test:server": "bun --filter bingewatcher-server test",
-    "coverage:client": "bun --filter bingewatcher-frontend coverage",
-    "build": "bun run build:client",
-    "build:client": "bun --filter bingewatcher-frontend build",
+    "test:e2e": "bun --filter bingewatcher-frontend test:e2e",
+    "coverage": "bun --filter bingewatcher-frontend coverage",
     "lint": "oxlint --max-warnings 0",
-    "lint:fix": "oxlint --fix && stylelint --fix \"client/src/**/*.scss\"",
     "lint:style": "stylelint \"client/src/**/*.scss\"",
-    "lint:style:fix": "stylelint --fix \"client/src/**/*.scss\"",
+    "lint:fix": "oxlint --fix && stylelint --fix \"client/src/**/*.scss\"",
     "format": "prettier --write .",
-    "pipeline": "bun install --frozen-lockfile && bun run lint && bun run test:client && bun run test:server && bun run build",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "check": "bun run lint && bun run lint:style && bun run format:check && bun run typecheck && bun run test"
   },
   "repository": {
     "type": "git",
