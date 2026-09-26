@@ -5,15 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "start": "vite",
-    "test": "bun run test:unit:no-watch && bun run test:e2e",
-    "test:unit": "vitest --dir src",
-    "test:unit:no-watch": "vitest run --dir src",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -b",
+    "test": "bun run test:unit && bun run test:e2e",
+    "test:unit": "vitest run --dir src",
+    "test:unit:watch": "vitest --dir src",
     "test:e2e": "playwright test",
     "test:e2e:ci": "playwright test --project=chromium",
-    "coverage": "vitest run --dir src --coverage --reporter=junit --outputFile.junit=./coverage/junit.xml",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "coverage": "vitest run --dir src --coverage"
   },
   "dependencies": {
     "@apollo/client": "^4.3.1",
@@ -39,8 +39,6 @@
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.1.1",
     "@vitest/coverage-v8": "^5.0.2",
-    "@vitest/ui": "^5.0.2",
-    "dotenv": "^18.0.4",
     "jsdom": "^30.1.1",
     "sass": "^1.105.0",
     "vite": "^8.3.1",
