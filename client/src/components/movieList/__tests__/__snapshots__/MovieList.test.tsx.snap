@@ -3,38 +3,40 @@
 exports[`MovieList > should match snapshot 1`] = `
 <div>
   <div
-    class="_container_a41492"
+    class="_container_3d749e"
     data-testid="movies-list-container"
   >
     <div
-      class="_wrapper_8de2c1"
+      class="_wrapper_cf7bd4"
     >
       <a
-        class="_link_8de2c1"
+        class="_link_cf7bd4"
+        data-discover="true"
         href="/movie/111111"
       >
         <div
-          class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root _card_8de2c1 css-bhp9pd-MuiPaper-root-MuiCard-root"
+          class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root _card_cf7bd4 css-1j74uew-MuiPaper-root-MuiCard-root"
           data-testid="movie-card"
+          style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);"
         >
           <img
             alt="Foo Bar poster."
-            class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img movie-card-image css-o69gx8-MuiCardMedia-root"
+            class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img movie-card-image css-1kuwa16-MuiCardMedia-root"
             loading="lazy"
             src="https://image.tmdb.org/t/p/w400/mockPosterURL.jpg"
           />
           <div
-            class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+            class="MuiCardContent-root css-1lt5qva-MuiCardContent-root"
           >
             <div
               aria-label="title: Foo Bar."
-              class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom css-d3wcwz-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom css-vjrxpc-MuiTypography-root"
             >
               Foo Bar
             </div>
             <p
               aria-label="genres:Adventure, Action"
-              class="MuiTypography-root MuiTypography-body2 css-xx3zdw-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-body2 css-iodfsx-MuiTypography-root"
             >
               Adventure, Action
             </p>
@@ -43,34 +45,36 @@ exports[`MovieList > should match snapshot 1`] = `
       </a>
     </div>
     <div
-      class="_wrapper_8de2c1"
+      class="_wrapper_cf7bd4"
     >
       <a
-        class="_link_8de2c1"
+        class="_link_cf7bd4"
+        data-discover="true"
         href="/movie/222222"
       >
         <div
-          class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root _card_8de2c1 css-bhp9pd-MuiPaper-root-MuiCard-root"
+          class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root _card_cf7bd4 css-1j74uew-MuiPaper-root-MuiCard-root"
           data-testid="movie-card"
+          style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);"
         >
           <img
             alt="Foo Bar poster."
-            class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img movie-card-image css-o69gx8-MuiCardMedia-root"
+            class="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img movie-card-image css-1kuwa16-MuiCardMedia-root"
             loading="lazy"
             src="https://image.tmdb.org/t/p/w400/mockPosterURL.jpg"
           />
           <div
-            class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+            class="MuiCardContent-root css-1lt5qva-MuiCardContent-root"
           >
             <div
               aria-label="title: Foo Bar."
-              class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom css-d3wcwz-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom css-vjrxpc-MuiTypography-root"
             >
               Foo Bar
             </div>
             <p
               aria-label="genres:Adventure, Action"
-              class="MuiTypography-root MuiTypography-body2 css-xx3zdw-MuiTypography-root"
+              class="MuiTypography-root MuiTypography-body2 css-iodfsx-MuiTypography-root"
             >
               Adventure, Action
             </p>
