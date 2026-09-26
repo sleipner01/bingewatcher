@@ -34,7 +34,7 @@ const collectionLength = 18;
 beforeAll(async () => {
   mongod = await MongoMemoryServer.create();
   const uri = mongod.getUri();
-  await mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+  await mongoose.connect(uri);
 
   // Seed the database with two genres
   await seedGenre(genre1);
