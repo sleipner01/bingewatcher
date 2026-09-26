@@ -77,7 +77,7 @@ This section provides an overview of the available scripts for this project. The
 | <div style="width:200px">Command</div> | Description                                                                                                                                           |
 | -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `bun install`                          | Installs dependencies for `client`. <br> **Note**: You will need to install the packages in root to enable Typescript and Eslint.                     |
-| `bun run start`                            | Does the same as `bun run dev`                                                                                                                        |
+| `bun run start`                        | Does the same as `bun run dev`                                                                                                                        |
 | `bun run dev`                          | Starts the project in development mode. The project will run locally on a local port number. Any code changes will trigger automatic browser updates. |
 
 ### Test
