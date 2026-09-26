@@ -7,7 +7,7 @@ test.beforeEach(async ({ page }) => {
 test('should reload home when clicking on home button', async ({ page }) => {
   await page.getByTestId('home-link').click();
   await page.reload();
-  expect(page.waitForURL('**/')).toBeTruthy();
+  await page.waitForURL('**/');
 });
 
 test('should navigate to home when clicking on home button', async ({ page }) => {
@@ -17,19 +17,19 @@ test('should navigate to home when clicking on home button', async ({ page }) =>
   await page.getByRole('link', { name: 'Blue Beetle poster. title: Blue Beetle.' }).click();
 
   await page.getByTestId('home-link').click();
-  await expect(page.waitForURL(baseURL)).toBeTruthy();
+  await page.waitForURL(baseURL);
 });
 
 test('should navigate to a movie when clicking on a movie', async ({ page }) => {
   await page.getByRole('link', { name: 'Blue Beetle poster. title: Blue Beetle.' }).click();
-  expect(page.waitForURL('**/movie/565770')).toBeTruthy();
+  await page.waitForURL('**/movie/565770');
 });
 
 test('should navigate to a watchlist', async ({ page }) => {
   await page.getByTestId('login-button').click();
   await page.getByTestId('menu').click();
   await page.getByTestId('watchlist-link').click();
-  expect(page.waitForURL('**/watchlist')).toBeTruthy();
+  await page.waitForURL('**/watchlist');
 });
 
 test('pagination', async ({ page }) => {
@@ -44,7 +44,7 @@ test('pagination', async ({ page }) => {
 });
 
 test('shows working scroll to top button', async ({ page }) => {
-  await page.goto('/project2/movie/852436');
+  await page.goto('/movie/852436');
   await page.getByTestId('vote-count').scrollIntoViewIfNeeded({ timeout: 1000 });
   await page.waitForTimeout(1000);
   await page.keyboard.press('End');

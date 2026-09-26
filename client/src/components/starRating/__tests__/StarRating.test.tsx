@@ -78,6 +78,6 @@ describe('StarRating', () => {
     renderWithProviders({ child: <StarRating movieId={1} user={mockUser} />, mocks: mocks });
     const ratingElement = screen.getByLabelText('5 Stars');
     fireEvent.click(ratingElement);
-    await waitFor(() => screen.getByText('5 of 10 stars'));
+    expect(await screen.findByText('5 of 10 stars')).toBeTruthy();
   });
 });

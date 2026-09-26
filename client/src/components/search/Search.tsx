@@ -67,7 +67,7 @@ export const Search: React.FC = () => {
         });
       },
     });
-    await setTimeout(() => {
+    setTimeout(() => {
       movieRefs.current[newOffset]?.focus();
     }, 0);
   };
@@ -83,7 +83,7 @@ export const Search: React.FC = () => {
   // Use useCallback to prevent to many rerenders
   const handleMovieSelect = useCallback(
     (movie: MovieSearchResult) => {
-      navigate(`/movie/${movie._id}`);
+      void navigate(`/movie/${movie._id}`);
       setIsDropdownOpen(false);
       setSearchTerm('');
     },
@@ -176,7 +176,7 @@ export const Search: React.FC = () => {
               tabIndex={0}
               onKeyDown={(e) => {
                 if (e.key === 'Enter') {
-                  loadMoreMovies();
+                  void loadMoreMovies();
                   setTabIndex(1);
                 } else if (e.key === 'Tab' && !e.shiftKey) {
                   setIsDropdownOpen(false);

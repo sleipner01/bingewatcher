@@ -9,7 +9,7 @@ const ratingResolver = {
         const userRating = await Rating.findOne({ _id: userID });
         const rat = userRating.ratings.find((r) => r.movieID.toString() === movieID.toString());
         return { rating: rat.rating };
-      } catch (error) {
+      } catch {
         return { rating: 0 };
       }
     },

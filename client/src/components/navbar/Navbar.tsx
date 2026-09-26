@@ -20,7 +20,7 @@ export const Navbar: React.FC = () => {
     if (location.pathname === '/') {
       window.location.reload();
     } else {
-      navigate('/');
+      void navigate('/');
     }
   };
   return (

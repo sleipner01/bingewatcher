@@ -186,11 +186,9 @@ describe('movieResolver', () => {
       });
 
       it('should return Error when order is not a-z or z-a', async () => {
-        try {
-          await movieQuery.getMoviesByTitleAZ(null, { page: 1, order: 'a-m' });
-        } catch (error) {
-          expect(error.message).toBe('Error while getting sorted movies by title: Error: Invalid order');
-        }
+        await expect(movieQuery.getMoviesByTitleAZ(null, { page: 1, order: 'a-m' })).rejects.toThrow(
+          'Error while getting sorted movies by title: Error: Invalid order',
+        );
       });
     });
 
@@ -216,7 +214,7 @@ describe('movieResolver', () => {
         const firstPageResults = await movieQuery.getMoviesByRating(null, { page: 1, order: 'l-h' });
         expect(firstPageResults).toHaveLength(pageSize);
         const ratingslist = firstPageResults.map((movie) => movie.vote_average);
-        const filteredRatings = firstPageResults.map((movie) => movie.vote_average).sort();
+        const filteredRatings = firstPageResults.map((movie) => movie.vote_average).sort((a, b) => a - b);
         expect(ratingslist).toEqual(filteredRatings);
 
         // Test the second page
@@ -226,11 +224,9 @@ describe('movieResolver', () => {
       });
 
       it('should return Error when order is not l-h or h-l', async () => {
-        try {
-          await movieQuery.getMoviesByRating(null, { page: 1, order: 'l-m' });
-        } catch (error) {
-          expect(error.message).toBe('Error while getting sorted movies by rating: Error: Invalid order');
-        }
+        await expect(movieQuery.getMoviesByRating(null, { page: 1, order: 'l-m' })).rejects.toThrow(
+          'Error while getting sorted movies by rating: Error: Invalid order',
+        );
       });
     });
   });
