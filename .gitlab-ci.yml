@@ -36,7 +36,7 @@ unit-test-job:
 
 e2e-test-job:
   stage: test-e2e
-  image: mcr.microsoft.com/playwright:v1.39.0-jammy
+  image: mcr.microsoft.com/playwright:v1.63.0-noble
   before_script:
     - npm install -g bun
     - bun install --frozen-lockfile
