@@ -23,7 +23,7 @@ The project can be found at:
 
 ## Documentation
 
-This readme is intended to provide a brief overview of the project setup and available npm scripts.
+This readme is intended to provide a brief overview of the project setup and available scripts.
 Other documentation can be found in the [docs](./docs) folder.
 
 ## Project structure
@@ -44,28 +44,14 @@ The server documentation can be found in the [server/README.md](./server/README.
 
 ### Root
 
-The `root` has its own `package.json` file, and is used to install dependencies common for the entire project. This includes Typescript, Eslint and Prettier. It also contains scripts for easy initialization of the client, server or both (if set up from before).
+The `root` has its own `package.json` file, and is used to install dependencies common for the entire project. This includes Typescript, Eslint and Prettier. It declares `client` and `server` as Bun workspaces and contains scripts for running of the client, server or both (if set up from before).
 
 ## Environment
 
-The system is built on node v20.5.0 and npm v9.8.1. We cannot guarantee that other versions of node will run the project without complications.
-
-To set correct node version, run:
+The project uses [Bun](https://bun.sh) v1.4 as package manager, script runner and server runtime. Install it with:
 
 ```cli
-nvm install 20.5.0
-```
-
-```cli
-nvm use 20.5.0
-```
-
-> <i>Note: The project cannot be run with node 20.6.0.</i>
-
-To set correct npm version, run:
-
-```cli
-npm install -g npm@9.8.1
+curl -fsSL https://bun.sh/install | bash
 ```
 
 The project have been developed and tested with Google Chrome, and therefore is best viewed in Google Chrome. Certain features may not work as intended in other browsers.
@@ -77,17 +63,17 @@ The project have been developed and tested with Google Chrome, and therefore is 
 To setup the project for development, run:
 
 ```cli
-npm run setup
+bun install
 ```
 
-This will concurrently install all dependencies for the project.
+This installs the dependencies for the `root`, `client` and `server` workspaces.
 
 For client spesific setup, please follow instructions located in [./client/README.md](./client/README.md#run-the-client).
 
 Once client is setup up, run:
 
 ```cli
-npm run dev:client
+bun run dev:client
 ```
 
 > <i>Client spesific scripts will only be available when the shell is located in the `client` directory. Please navigate to the directory if you wish to use them or have more flexability.</i>
@@ -103,7 +89,7 @@ If you wish to set up a local backend server, please follow instructions located
 Once configured properly, start the server by running:
 
 ```cli
-npm run dev:server
+bun run dev:server
 ```
 
 > <i>Server spesific scripts will only be available when the shell is located in the `server` directory. Please navigate to the directory if you wish to use them or have more flexability.</i>
@@ -113,55 +99,53 @@ npm run dev:server
 If both client and server is set up correctly, you can use the following script to run both the client and server concurrently in the same terminal:
 
 ```cli
-npm run dev
+bun run dev
 ```
 
-This will start the project in development mode. The project will run locally on a local ports, initialized by Vite and node. Any code changes will trigger automatic browser- and server updates.
+This will start the project in development mode. The project will run locally on a local ports, initialized by Vite and Bun. Any code changes will trigger automatic browser- and server updates.
 
 <i> Overview over all the scripts can be found in the section below.</i>
 
-## Available NPM Scripts
+## Available Scripts
 
-This section provides an overview of the available npm scripts for this project. These scripts help you manage development, testing, building, and other maintenance tasks for the project.
+This section provides an overview of the available scripts for this project. These scripts help you manage development, testing, building, and other maintenance tasks for the project.
 
 ### Setup
 
 | <div style="width:200px">Command</div> | Description                                                                                                           |
 | -------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `npm install`                          | Installs dependencies for `root`.locally.                                                                             |
-| `npm run setup`                        | Concurrently installs dependencies in `root`, `client` & `server`.                                                    |
-| `npm run setup:nonconcurrent`          | Sequencially installs dependencies in `root`, `client` & `server`.                                                    |
-| `npm run dev`                          | This script starts client & server concurrently in development mode. Any code changes will trigger automatic updates. |
-| `npm run dev:client`                   | This script starts client in development mode. Any code changes will trigger automatic browser updates.               |
-| `npm run dev:server`                   | This script starts server in development mode. Any code changes will trigger automatic updates.                       |
+| `bun install`                          | Installs dependencies for `root`, `client` & `server`.                                                                |
+| `bun run dev`                          | This script starts client & server concurrently in development mode. Any code changes will trigger automatic updates. |
+| `bun run dev:client`                   | This script starts client in development mode. Any code changes will trigger automatic browser updates.               |
+| `bun run dev:server`                   | This script starts server in development mode. Any code changes will trigger automatic updates.                       |
 
 ### Test
 
 | <div style="width:200px">Command</div> | Description                                                                                                                                                                                                        |
 | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `npm run test`                         | Runs all the test files in the entire project. <b>Note:</b> You must [set up Playwright](./docs/playwright.md) for this to work.                                                                                   |
-| `npm run test:client`                  | Runs tests in the `./client` using Vitest and Playwright. <b>Note:</b> You must [set up Playwright](./docs/playwright.md) for this to work.                                                                        |
-| `npm run test:server`                  | This script runs tests in the server using Vitest. It will execute all tests in the `./server` directory.                                                                                                          |
-| `npm run coverage:client`              | This script runs tests with code coverage using Vitest. After completion, it will generate code coverage reports that you can find in your project. You can find the reports [here](./client/coverage/index.html). |
+| `bun run test`                         | Runs all the test files in the entire project. <b>Note:</b> You must [set up Playwright](./docs/playwright.md) for this to work.                                                                                   |
+| `bun run test:client`                  | Runs tests in the `./client` using Vitest and Playwright. <b>Note:</b> You must [set up Playwright](./docs/playwright.md) for this to work.                                                                        |
+| `bun run test:server`                  | This script runs tests in the server using Vitest. It will execute all tests in the `./server` directory.                                                                                                          |
+| `bun run coverage:client`              | This script runs tests with code coverage using Vitest. After completion, it will generate code coverage reports that you can find in your project. You can find the reports [here](./client/coverage/index.html). |
 
 ### Code Quality
 
 | <div style="width:200px">Command</div> | Description                                                                                                                                                              |
 | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `npm run lint`                         | Runs ESLint to check TypeScript and TypeScript-related files in the project for style errors and code issues. It will also report any unused ESLint-disable directives.  |
-| `npm run lint:fix`                     | Runs ESLint with the --fix flag to automatically fix formatting issues and style errors in project files.                                                                |
-| `npm run lint:style`                   | Runs Stylelint to check CSS files in the project for style errors and code issues.                                                                                       |
-| `npm run lint:style:fix`               | Runs Stylelint with the --fix flag to automatically fix formatting issues and style errors in project files.                                                             |
-| `npm run format`                       | Runs Prettier to format the code in TypeScript, JavaScript, SCSS, JSON, and CSS files in the project according to the configuration defined in the .prettierrc.cjs file. |
+| `bun run lint`                         | Runs ESLint to check TypeScript and TypeScript-related files in the project for style errors and code issues. It will also report any unused ESLint-disable directives.  |
+| `bun run lint:fix`                     | Runs ESLint with the --fix flag to automatically fix formatting issues and style errors in project files.                                                                |
+| `bun run lint:style`                   | Runs Stylelint to check CSS files in the project for style errors and code issues.                                                                                       |
+| `bun run lint:style:fix`               | Runs Stylelint with the --fix flag to automatically fix formatting issues and style errors in project files.                                                             |
+| `bun run format`                       | Runs Prettier to format the code in TypeScript, JavaScript, SCSS, JSON, and CSS files in the project according to the configuration defined in the .prettierrc.cjs file. |
 
 ### Production
 
 | <div style="width:200px">Command</div> | Description                                              |
 | -------------------------------------- | -------------------------------------------------------- |
-| `npm run build:client`                 | This script builds the client for production using Vite. |
+| `bun run build:client`                 | This script builds the client for production using Vite. |
 
 ### CI/CD
 
 | <div style="width:200px">Command</div> | Description                                           |
 | -------------------------------------- | ----------------------------------------------------- |
-| `npm run pipeline`                     | This script will simulate the CI/CD pipeline locally. |
+| `bun run pipeline`                     | This script will simulate the CI/CD pipeline locally. |

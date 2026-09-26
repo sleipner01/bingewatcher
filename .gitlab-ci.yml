@@ -1,17 +1,20 @@
-image: node:20
+image: oven/bun:1.4
 
 cache: # Cache modules in between jobs
   key: $CI_COMMIT_REF_SLUG
   paths:
-    - .npm/
+    - .bun-cache/
+
+variables:
+  BUN_INSTALL_CACHE_DIR: $CI_PROJECT_DIR/.bun-cache
 
 before_script:
-  - npm run setup:ci
+  - bun install --frozen-lockfile
 
 stages:
   - test-unit
   - test-e2e
-  # - test-server
+  - test-server
   - lint
   - lint-css
   - build
@@ -22,7 +25,7 @@ unit-test-job:
   script:
     - echo "Running unit tests..."
     - cd client
-    - npm run coverage
+    - bun run coverage
   coverage: '/All files[^|]*\|[^|]*\s+([\d\.]+)/'
   artifacts:
     when: always
@@ -34,31 +37,33 @@ unit-test-job:
 e2e-test-job:
   stage: test-e2e
   image: mcr.microsoft.com/playwright:v1.39.0-jammy
+  before_script:
+    - npm install -g bun
+    - bun install --frozen-lockfile
   script:
     - echo "Running e2e tests..."
     - cd client
-    - npm run test:e2e:ci
+    - bun run test:e2e:ci
 
-# Skipping since "libcrypto.so.1.1" is missing in image node:20
-# server-test-job:
-#   stage: test-server
-#   script:
-#     - echo "Running unit tests..."
-#     - cd server
-#     - npm run test
+server-test-job:
+  stage: test-server
+  script:
+    - echo "Running unit tests..."
+    - cd server
+    - bun run test
 
 lint-test-job 1/2:
   stage: lint
   script:
     - echo "Linting code..."
-    - npm run lint
+    - bun run lint
     - echo "No lint issues found."
 
 lint-test-job 2/2:
   stage: lint-css
   script:
     - echo "Linting code..."
-    - npm run lint:style
+    - bun run lint:style
     - echo "No lint issues found."
 
 build-client:
@@ -66,5 +71,5 @@ build-client:
   script:
     - echo "Compiling the code..."
     - cd client
-    - npm run build
+    - bun run build
     - echo "Compile complete."

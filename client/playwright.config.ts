@@ -71,13 +71,13 @@ export default defineConfig({
   /* Run your local dev server before starting the tests */
   webServer: [
     {
-      command: 'npm run dev',
+      command: 'bun run dev',
       url: 'http://localhost:5173/project2',
       timeout: 120 * 1000,
       reuseExistingServer: !process.env.CI,
     },
     {
-      command: process.env.CI ? 'cd ../server/ && npm run start $DB_URI' : 'cd ../server/ && npm start',
+      command: process.env.CI ? 'cd ../server/ && bun run start $DB_URI' : 'cd ../server/ && bun run start',
       url: 'http://localhost:4000',
       timeout: 120 * 1000,
       reuseExistingServer: !process.env.CI,

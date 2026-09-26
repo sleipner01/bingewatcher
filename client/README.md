@@ -2,7 +2,7 @@
 
 This folder contains the frontend code for the project. The frontend is built with React and TypeScript. The frontend is built with Vite, and uses Apollo Client to fetch data from the GraphQL API. Testing is done with Vitest and React Testing Library.
 
-This readme is intended to provide a brief overview of the project setup and available npm scripts. More detailed documentation can be found in the [docs](../docs) folder.
+This readme is intended to provide a brief overview of the project setup and available scripts. More detailed documentation can be found in the [docs](../docs) folder.
 
 ## Client structure
 
@@ -55,7 +55,7 @@ VITE_SERVER_URI={server-uri}
 If you have not already done so, run the following command to install all dependencies:
 
 ```cli
-npm install
+bun install
 ```
 
 > <i>Note: You will need to install the packages in root to enable Typescript and linting.</i>
@@ -63,36 +63,36 @@ npm install
 To run the client, run the following command:
 
 ```cli
-npm run dev
+bun run dev
 ```
 
 This will start the client on a local port number. Any code changes will trigger automatic browser updates.
 
-## Available NPM Scripts
+## Available Scripts
 
-This section provides an overview of the available npm scripts for this project. These scripts help you manage development, testing, building, and other maintenance tasks for the project.
+This section provides an overview of the available scripts for this project. These scripts help you manage development, testing, building, and other maintenance tasks for the project.
 
 ### Setup
 
 | <div style="width:200px">Command</div> | Description                                                                                                                                           |
 | -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `npm install`                          | Installs dependencies for `client`. <br> **Note**: You will need to install the packages in root to enable Typescript and Eslint.                     |
-| `npm start`                            | Does the same as `npm run dev`                                                                                                                        |
-| `npm run dev`                          | Starts the project in development mode. The project will run locally on a local port number. Any code changes will trigger automatic browser updates. |
+| `bun install`                          | Installs dependencies for `client`. <br> **Note**: You will need to install the packages in root to enable Typescript and Eslint.                     |
+| `bun run start`                            | Does the same as `bun run dev`                                                                                                                        |
+| `bun run dev`                          | Starts the project in development mode. The project will run locally on a local port number. Any code changes will trigger automatic browser updates. |
 
 ### Test
 
 | <div style="width:200px">Command</div> | Description                                                                                                                                                                                                      |
 | -------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `npm run test`                         | Runs all tests. <br /><b>Note:</b> You must [set up Playwright](../docs/playwright.md) for this to work.                                                                                                         |
-| `npm run test:unit`                    | Runs strictly unit tests (in watch mode)                                                                                                                                                                         |
-| `npm run test:unit:no-watch`           | Strictly runs unit tests.                                                                                                                                                                                        |
-| `npm run coverage`                     | This script runs unit tests with code coverage using Vitest. After completion, it will generate code coverage reports that you can find in your project. You can find the reports [here](./coverage/index.html). |
-| `npm run test:e2e`                     | Runs end to end tests. <br /><b>Note:</b> You must [set up Playwright](../docs/playwright.md) for this to work.                                                                                                  |
+| `bun run test`                         | Runs all tests. <br /><b>Note:</b> You must [set up Playwright](../docs/playwright.md) for this to work.                                                                                                         |
+| `bun run test:unit`                    | Runs strictly unit tests (in watch mode)                                                                                                                                                                         |
+| `bun run test:unit:no-watch`           | Strictly runs unit tests.                                                                                                                                                                                        |
+| `bun run coverage`                     | This script runs unit tests with code coverage using Vitest. After completion, it will generate code coverage reports that you can find in your project. You can find the reports [here](./coverage/index.html). |
+| `bun run test:e2e`                     | Runs end to end tests. <br /><b>Note:</b> You must [set up Playwright](../docs/playwright.md) for this to work.                                                                                                  |
 
 ### Production
 
 | <div style="width:200px">Command</div> | Description                                                                                                                                                  |
 | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `npm run build`                        | Compiles and builds the project for production. The project will be built into the `/dist` folder.                                                           |
-| `npm run preview`                      | This script starts Vite in preview mode, allowing you to preview the production build locally before deployment. Please use this before deploying to the VM. |
+| `bun run build`                        | Compiles and builds the project for production. The project will be built into the `/dist` folder.                                                           |
+| `bun run preview`                      | This script starts Vite in preview mode, allowing you to preview the production build locally before deployment. Please use this before deploying to the VM. |
